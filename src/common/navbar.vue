@@ -6,13 +6,13 @@
       <el-menu-item index="home" @click="$router.push('/')">
         主页
       </el-menu-item>
-      <el-menu-item index="activity" @click="$router.push('/activity')">
+      <el-menu-item index="activity" @click="$router.push('/menu')">
         数据分析
       </el-menu-item>
-      <el-menu-item index="resource" @click="$router.push('/resource')">
+      <el-menu-item index="resource" @click="$router.push('/evaluate')">
         萌宠寻主
       </el-menu-item>
-      <el-menu-item index="forum" @click="$router.push('/organization')">
+      <el-menu-item index="forum" @click="$router.push('/find')">
         猜你喜欢
       </el-menu-item>
       <!--<el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/login')" style="float: right">-->

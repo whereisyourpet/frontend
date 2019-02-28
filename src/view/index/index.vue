@@ -22,9 +22,10 @@
 
 <style scoped>
   .body{
-  background-image: url('../../assets/image_repo/background.jpg');
-  background-size: 100%;
-  background-repeat:no-repeat;
+    background-image: url('../../assets/image_repo/background.jpg');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-attachment:fixed
 }
   .img-block{
     width: 18%;
