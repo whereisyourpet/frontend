@@ -20,17 +20,17 @@ Vue.use(ElementUI);
 
 
 /* router auth */
-router.beforeEach(function(to, from, next) {
-  console.log(store.state.isLogged, to.path);
-
-  let { meta } = to;
-  let { auth = false } = meta;
-  if (!store.state.isLogged && auth == true) {
-    next("/login");
-  } else {
-    next();
-  }
-});
+// router.beforeEach(function(to, from, next) {
+//   console.log(store.state.isLogged, to.path);
+//
+//   let { meta } = to;
+//   let { auth = false } = meta;
+//   if (!store.state.isLogged && auth == true) {
+//     next("/login");
+//   } else {
+//     next();
+//   }
+// });
 
 /* eslint-disable no-new */
 new Vue({

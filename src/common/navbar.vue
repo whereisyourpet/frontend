@@ -1,6 +1,8 @@
 <template>
   <div class="navbar">
-    <el-menu :default-active="activeIndex" mode="horizontal">
+    <!--<el-menu :default-active="activeIndex" mode="horizontal">-->
+    <!--<el-menu :default-active="activeIndex" mode="horizontal">-->
+    <el-menu mode="horizontal">
       <el-menu-item index="home" @click="$router.push('/')">
         主页
       </el-menu-item>
@@ -13,12 +15,12 @@
       <el-menu-item index="forum" @click="$router.push('/organization')">
         猜你喜欢
       </el-menu-item>
-      <el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/login')" style="float: right">
-        登陆/注册
-      </el-menu-item>
-      <el-menu-item v-if="this.isLogged" index="logout" @click="handle_logout" style="float: right">
-        登出
-      </el-menu-item>
+      <!--<el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/login')" style="float: right">-->
+        <!--登陆/注册-->
+      <!--</el-menu-item>-->
+      <!--<el-menu-item v-if="this.isLogged" index="logout" @click="handle_logout" style="float: right">-->
+        <!--登出-->
+      <!--</el-menu-item>-->
     </el-menu>
   </div>
 </template>
@@ -64,9 +66,9 @@ import { mapState } from 'vuex'
       //     })
       //   }
       // }
-      computed : {
-        ...mapState(['isLogged'])
-      }
+      // computed : {
+      //   ...mapState(['isLogged'])
+      // }
 
     }
 </script>
