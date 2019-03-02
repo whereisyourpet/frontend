@@ -1,38 +1,53 @@
 <template>
   <div class="body">
+    <div style="height:10px"></div>
     <el-card class="img-block">
       <div>
-        <a href="index.vue"><img class="img-button" src="../../assets/image_repo/doge_meitu_3.png"/></a>
+        <a href="index.vue">
+          <img class="img-button" src="../../assets/image_repo/doge_meitu_1_s.png">
+        </a>
       </div>
+      <div style="height:30px"></div>
       <div>
-        <a href="index.vue"><img class="img-button" src="../../assets/image_repo/doge_meitu_3.png"/></a>
+        <a href="index.vue">
+          <img class="img-button" src="../../assets/image_repo/doge_meitu_3_s.png">
+        </a>
       </div>
+      <div style="height:30px"></div>
       <div>
-        <a href="index.vue"><img class="img-button" src="../../assets/image_repo/doge_meitu_3.png"/></a>
+        <a href="index.vue">
+          <img class="img-button" src="../../assets/image_repo/doge_meitu_2_s.png">
+        </a>
       </div>
     </el-card>
+    <div style="height:9px"></div>
   </div>
-</template>
+</template>   
 
 <script>
-    export default {
-        name: "index"
-    }
+export default {
+  name: "index"
+};
 </script>
 
 <style scoped>
-  .body{
-    background-image: url('../../assets/image_repo/background.jpg');
-    background-size: 100%;
-    background-repeat:no-repeat;
-    background-attachment:fixed
+.body {
+  background-image: url("../../assets/image_repo/background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-  .img-block{
-    width: 18%;
-    height: 40%;
-  }
-  .img-button{
-    height: 60%;
-    width: 60%;
-  }
+.img-block {
+  width: 18%;
+  height: 40%;
+  margin-left: 65%;
+}
+.img-button {
+  height: 60%;
+  width: 95%;
+}
+.img-block {
+  border: none;
+  background: rgba(255, 255, 255, 0);
+}
 </style>
