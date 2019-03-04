@@ -76,7 +76,7 @@ export default {
 
     <style scoped>
 .personal-basic {
-  background-image: url("../../assets/image_repo/background.jpg");
+  background-image: url("../../assets/image_repo/background2.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
