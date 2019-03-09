@@ -12,22 +12,22 @@
             </router-link>
           </h2>
         </div>
-        <el-form label-width="100px">
+        <el-form :model="form" :rules="rules" ref="form" label-width="100px">
           <el-form-item prop="username" label="用户名">
-            <el-input type="text" placeholder></el-input>
+            <el-input v-model.trim="form.username" type="text"></el-input>
           </el-form-item>
-          <el-form-item prop="name" label="昵称">
-            <el-input type="text" placeholder></el-input>
+          <el-form-item prop="nickname" label="昵称">
+            <el-input v-model="form.nickname" type="text"></el-input>
           </el-form-item>
           <el-form-item prop="password" label="密码">
-            <el-input type="password" placeholder></el-input>
+            <el-input v-model="form.password" type="password"></el-input>
           </el-form-item>
-          <el-form-item prop="password2" label="确认密码" required>
-            <el-input type="password" placeholder></el-input>
+          <el-form-item prop="password2" label="确认密码">
+            <el-input v-model="form.password2" type="password"></el-input>
           </el-form-item>
           <!--注册按钮要不要居中？-->
           <el-form-item label-width="143px">
-            <el-button type="primary" @click="handle_register">注册</el-button>
+            <el-button type="primary" @click="handle_register()">注册</el-button>
           </el-form-item>
         </el-form>
       </el-card>
@@ -37,8 +37,87 @@
 </template>
 
 <script>
+import qs from "qs";
 export default {
-  name: "register"
+  name: "register",
+
+  data() {
+    var validatePass = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入密码"));
+      } else {
+        if (this.form.password2 !== "") {
+          this.$refs.form.validateField("password2");
+        }
+        callback();
+      }
+    };
+    var validatePass2 = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请再次输入密码"));
+      } else if (value !== this.form.password) {
+        callback(new Error("两次输入密码不一致!"));
+      } else {
+        callback();
+      }
+    };
+
+    return {
+      form: {
+        username: null,
+        password: null,
+        password2: null,
+        nickname: null
+      },
+      rules: {
+        username: [
+          { required: true, message: "请输入用户名", trigger: "blur" },
+          { max: 12, message: "用户名长度应小于12个字符", trigger: "blur" }
+        ],
+        nickname: [{ required: true, message: "请输入昵称", trigger: "blur" },
+            {max: 16, message: "昵称请小于16个字符", trigger: "blur" }],
+        password: [
+          { validator: validatePass, trigger: "blur" },
+          { required: true, message: "请输入密码", trigger: "blur" },
+          { min: 6, max: 12, message: "密码长度在 6 到18个字符", trigger: "blur" }
+          ],
+
+        password2: [
+          { validator: validatePass2, trigger: "blur" },
+          { required: true, message: "请输入密码", trigger: "blur" },
+        ]
+      }
+    };
+  },
+  methods: {
+    handle_register() {
+      if (this.form.password !== this.form.password2) {
+        alert("两次密码不一致");
+        return;
+      }
+      let me = this;
+      let postData = qs.stringify({
+        username: this.form.username,
+        nickname: this.form.nickname,
+        password: this.form.password
+      });
+      console.log(postData);
+      this.$ajax
+        .post("http://127.0.0.1:8000/users/register", postData)
+        .then(function(response) {
+          // console.log(response.data);
+          // console.log(response.status);
+          // console.log(response.statusText);
+          // console.log(response.headers);
+          // console.log(response.config);
+          if (response.data.success) {
+            me.$router.push("/login");
+          } else {
+            alert(response.data.msg);
+          }
+        });
+    }
+  }
 };
 </script>
 

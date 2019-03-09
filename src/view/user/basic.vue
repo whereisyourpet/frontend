@@ -9,13 +9,13 @@
       <el-main>
         <el-form label-width="100px">
           <div class="div-a">
-            <el-form-item>
+            <el-form-item required>
               <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
               <el-input disabled style="width:217px"></el-input>
             </el-form-item>
           </div>
           <div class="div-a">
-            <el-form-item label="所在州域">
+            <el-form-item label="所在州域" required>
               <el-input style="width:217px"></el-input>
             </el-form-item>
           </div>
@@ -26,13 +26,13 @@
             </el-form-item>
           </div>
           <div class="div-a">
-            <el-form-item label="收养意愿">
+            <el-form-item label="收养意愿" required>
               <el-radio label="1">有</el-radio>
               <el-radio label="2">无</el-radio>
             </el-form-item>
           </div>
           <div class="div-a">
-            <el-form-item label="收养数量">
+            <el-form-item label="收养数量" required>
               <el-input disabled style="width:217px"></el-input>
             </el-form-item>
           </div>

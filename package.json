@@ -13,6 +13,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "echarts": "^4.1.0",
     "element-ui": "^2.5.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
@@ -61,6 +63,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "qs": "^6.6.0",
     "rimraf": "^2.6.0",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",

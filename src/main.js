@@ -5,8 +5,15 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import store from "./store/index";
+import echarts from 'echarts'
 
+import axios from 'axios' //引入axios
+import qs from 'qs'
 
+var baseUrl = 'http://127.0.0.1:8000';
+
+Vue.prototype.$ajax=axios
+Vue.use(echarts)
 
 Vue.config.productionTip = false
 

@@ -13,7 +13,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item>
+          <el-form-item required>
             <span slot="label">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
             <el-select placeholder="请选择">
               <el-option
@@ -26,7 +26,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item>
+          <el-form-item required>
             <!--先放一放，问题很大-->
             <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
             <el-select placeholder="请选择">
@@ -40,13 +40,13 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item>
-            <span slot="label">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
+          <el-form-item required>
+            <span slot="label" >年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
             <el-input type="text" placeholder="请输入年龄（单位为月份）" style="width:217px"></el-input>
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="主要血统">
+          <el-form-item label="主要血统" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -70,7 +70,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="主要毛色">
+          <el-form-item label="主要毛色" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -106,7 +106,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="成熟体型">
+          <el-form-item label="成熟体型" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -118,8 +118,8 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item>
-            <span slot="label">毛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长</span>
+          <el-form-item required>
+            <span slot="label" required>毛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长</span>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -131,7 +131,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="所在州域">
+          <el-form-item label="所在州域" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -143,8 +143,8 @@
           </el-form-item>
         </div>
 
-        <div class="div-a">
-          <el-form-item label="是否除虫">
+        <div class="div-a" >
+          <el-form-item label="是否除虫" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -156,7 +156,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="有无疫苗">
+          <el-form-item label="有无疫苗" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -168,8 +168,8 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="是否绝育">
-            <el-select placeholder="请选择">
+          <el-form-item label="是否绝育" required>
+            <el-select placeholder="请选择"> 
               <el-option
                 v-for="item in options"
                 :key="item.value"
@@ -180,7 +180,7 @@
           </el-form-item>
         </div>
         <div class="div-a">
-          <el-form-item label="健康状况">
+          <el-form-item label="健康状况" required>
             <el-select placeholder="请选择">
               <el-option
                 v-for="item in options"
@@ -244,6 +244,11 @@
     </el-card>
     <div style="height:30px"></div>
   </div>
+
+    <!-- 小六，为师告诉你 ，你要记得加费用 -->
+
+
+
 </template>
 
 <script>

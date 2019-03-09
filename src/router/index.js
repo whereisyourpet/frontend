@@ -23,6 +23,9 @@ import menu from '@/view/dataAnalyse/menuMap'
 //个人
 import basic from '@/view/user/basic'
 
+//测试echarts
+import echarts from '@/common/echarts/test.vue'
+
 export default new Router({
   routes: [
     {
@@ -54,6 +57,11 @@ export default new Router({
       path : '/menu',
       name : 'menu',
       component : menu
+    },
+    {
+      path : '/echarts',
+      name : 'echarts',
+      component : echarts
     },
     {
       path : '/basic',
