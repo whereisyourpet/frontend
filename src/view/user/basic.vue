@@ -71,18 +71,7 @@
     <script>
 export default {
   name: "basic",
-  mounted() {
-    let setting = {
-      method: "GET",
-      url: "http://127.0.0.1:8000/users/get_user_info",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      }
-    };
-    this.$axios(setting).then(response => {
-      console.log(response);
-    });
-  }
+
 };
 </script>
 

@@ -52,7 +52,6 @@ export default {
   name: "login",
     mounted() {
       console.log('ojbk');
-      
     let setting = {
       method: "GET",
       url: "http://127.0.0.1:8000/users/get_user_info",
@@ -91,7 +90,7 @@ export default {
         username: this.form.username,
         password: this.form.password
       });
-
+      this.$axios.defaults.withCredentials=true;
       this.$axios
         .post("http://127.0.0.1:8000/users/login", postData)
         .then(function(response) {
