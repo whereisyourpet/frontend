@@ -102,7 +102,7 @@ export default {
         password: this.form.password
       });
       console.log(postData);
-      this.$ajax
+      this.$axios
         .post("http://127.0.0.1:8000/users/register", postData)
         .then(function(response) {
           // console.log(response.data);

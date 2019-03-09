@@ -10,20 +10,22 @@ import echarts from 'echarts'
 import axios from 'axios' //引入axios
 import qs from 'qs'
 
-var baseUrl = 'http://127.0.0.1:8000';
 
-Vue.prototype.$ajax=axios
-Vue.use(echarts)
 
-Vue.config.productionTip = false
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.withCredentials=true;
 
+Vue.prototype.$axios=axios;
+Vue.use(echarts);
+Vue.config.productionTip = false;
 Vue.use(Vuex);
-
 //import element-ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
+
+
 
 
 /* router auth */
