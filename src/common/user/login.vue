@@ -86,6 +86,7 @@ export default {
           console.log(response.config);
           if(response.data.success){
             me.$router.push('/')
+            location.reload()
           }else{
             alert(response.data.msg)
           }

@@ -233,14 +233,14 @@
   </div>
 
     <!-- 小六，为师告诉你 ，你要记得加费用 -->
-
+  
 
 
 </template>
 
 <script>
 export default {
-  name: "evaluate"
+  name: "evaluate" 
 };
 </script>
 

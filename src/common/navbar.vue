@@ -7,19 +7,25 @@
       <el-menu-item index="activity" @click="$router.push('/menu')">数据分析</el-menu-item>
       <el-menu-item index="resource" @click="$router.push('/evaluate')">萌宠寻主</el-menu-item>
       <el-menu-item index="forum" @click="$router.push('/find')">猜你喜欢</el-menu-item>
-      <el-menu-item v-if="!this.isLogged" index="register" @click="$router.push('/register')" style="float: right">
-      注册
-      </el-menu-item>
-      <el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/login')" style="float: right">
-      登录
-      </el-menu-item>
-      <el-menu-item v-if="this.isLogged" index="logout" @click="handle_logout" style="float: right">
-      登出
-      </el-menu-item>
-      <el-menu-item v-if="this.isLogged" style="float: right">
-      欢迎您，{{username}}
-      </el-menu-item>
-      
+      <el-menu-item
+        v-if="!this.islogged"
+        index="register"
+        @click="$router.push('/register')"
+        style="float: right"
+      >注册</el-menu-item>
+      <el-menu-item
+        v-if="!this.islogged"
+        index="log"
+        @click="$router.push('/login')"
+        style="float: right"
+      >登录</el-menu-item>
+      <el-menu-item
+        v-if="this.islogged"
+        index="logout"
+        @click="handle_logout()"
+        style="float: right"
+      >登出</el-menu-item>
+      <el-menu-item v-if="this.islogged" @click="$router.push('/basic')" style="float: right">欢迎您，{{this.nickname}}</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -37,9 +43,50 @@ export default {
   name: "navbar",
   data() {
     return {
+      islogged: false,
+      nickname: "",
       activateIndex: "1"
     };
-  }
+  },
+  mounted() {
+    let me = this;
+    this.$axios
+      .get("http://127.0.0.1:8000/users/status")
+      .then(function(response) {
+        console.log(response.data.status == "1");
+        if (response.data.status == "1") {
+          me.islogged = true;
+          if (me.islogged) {
+            let setting = {
+              method: "GET",
+              url: "http://127.0.0.1:8000/users/get_user_info",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              }
+            };
+            me.$axios.defaults.withCredentials = true;
+            me.$axios(setting).then(function(response) {
+              me.nickname = response.data.nickname;
+            });
+          }
+        }
+      });
+  },
+  methods: {
+    handle_logout(){
+      let me = this
+      this.$axios
+      .get("http://127.0.0.1:8000/users/logout")
+      .then(function(response){
+        if(response.data.success){
+          alert("注销成功")
+          me.$router.push('/')
+          location.reload()
+        }
+      });
+    },
+  },
+
   /*
 ################################################################################
 #                                 wait for api                                 #
