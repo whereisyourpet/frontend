@@ -7,12 +7,19 @@
       <el-menu-item index="activity" @click="$router.push('/menu')">数据分析</el-menu-item>
       <el-menu-item index="resource" @click="$router.push('/evaluate')">萌宠寻主</el-menu-item>
       <el-menu-item index="forum" @click="$router.push('/find')">猜你喜欢</el-menu-item>
-      <!--<el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/login')" style="float: right">-->
-      <!--登陆/注册-->
-      <!--</el-menu-item>-->
-      <!--<el-menu-item v-if="this.isLogged" index="logout" @click="handle_logout" style="float: right">-->
-      <!--登出-->
-      <!--</el-menu-item>-->
+      <el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/register')" style="float: right">
+      注册
+      </el-menu-item>
+      <el-menu-item v-if="!this.isLogged" index="log" @click="$router.push('/login')" style="float: right">
+      登录
+      </el-menu-item>
+      <el-menu-item v-if="this.isLogged" index="logout" @click="handle_logout" style="float: right">
+      登出
+      </el-menu-item>
+      <el-menu-item v-if="this.isLogged" style="float: right">
+      欢迎您，{{username}}
+      </el-menu-item>
+      
     </el-menu>
   </div>
 </template>
