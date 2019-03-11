@@ -254,7 +254,6 @@
 
 <script>
 export default {
-<<<<<<< HEAD
   name: "evaluate",
   data() {
     return {
@@ -1056,9 +1055,6 @@ export default {
       }
     }      
 },
-=======
-  name: "evaluate" 
->>>>>>> 539bc335a1633403c41b9fd6d33480a66a60d833
 };
 </script>
 
