@@ -1,11 +1,6 @@
 <template>
   <div class="personal-view">
-    <el-menu
-      default-active="1"
-      class="el-menu-vertical-demo personal-sidenav"
-      @open="handleOpen"
-      @close="handleClose"
-      @select="change_component">
+    <el-menu default-active="1" class="el-menu-vertical-demo personal-sidenav" @select="change_component">
       <el-menu-item index="user-info">
         <i class="el-icon-tickets"></i>
         <span slot="title">个人信息</span>
@@ -19,7 +14,7 @@
     <el-main class="personal-content">
       <component :is="componentName"></component>
     </el-main>
-
+    <div style="clear: both;"></div>
   </div>
 </template>
 

@@ -233,10 +233,10 @@ export default {
   /*background-attachment: fixed;*/
 }
 .form-style {
-  /*width: 60%;*/
-  /*margin-left: 20%;*/
-  /*border-radius: 2%;*/
-  /*background: rgba(255, 255, 255, 0.9);*/
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 2%;
+  background: rgba(255, 255, 255, 0.9);
 }
 .el-form-item {
   float: left;
