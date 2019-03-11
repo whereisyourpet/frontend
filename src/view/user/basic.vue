@@ -1,8 +1,8 @@
 <template>
-  <div class="menu-map">
+  <div class="personal-view">
     <el-menu
       default-active="1"
-      class="el-menu-vertical-demo"
+      class="el-menu-vertical-demo personal-sidenav"
       @open="handleOpen"
       @close="handleClose"
       @select="change_component">
@@ -14,7 +14,7 @@
         <i class="el-icon-menu"></i>
         <span slot="title">已发布宠物</span>
       </el-menu-item>
-      
+
     </el-menu>
     <el-main class="personal-content">
       <component :is="componentName"></component>
@@ -70,6 +70,14 @@
   width: 10%;
   margin-left: 5%;
   margin-top: 5%;
+}
+.personal-view {
+  width: 1200px;
+  margin: 0 auto;
+}
+.personal-sidenav {
+  width: 20%;
+  float: left;
 }
 .personal-content {
   width: 75%;
