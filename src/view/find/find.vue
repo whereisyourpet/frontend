@@ -196,6 +196,7 @@ export default {
   data() {
     return {
       data: {
+        
         fee: 0,
         pet_type: "",
         pet_type_option: [
