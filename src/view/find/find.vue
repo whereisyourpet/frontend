@@ -57,7 +57,7 @@
         </el-form-item>
 
         <el-form-item label="次要血统">
-          <el-select v-model="data.secondary_breed" placeholder="请选择">
+          <el-select v-model="data.secondary_breed" filterable  placeholder="请选择">
             <el-option
               v-for="item in data.secondary_breed_option"
               :key="item.value"
