@@ -7,16 +7,15 @@
       <div style="height:15px"></div>
       <div style="border-top:1px solid #DCDCDC"></div>
       <el-main>
-        <el-form :model="data" label-width="160px" >  
-          
-
+        <el-form :model="data" label-width="120px" >  
             <el-form-item prop = "gender"  required>
               <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
               <el-radio v-model="data.gender" label="2">男</el-radio>
               <el-radio v-model="data.gender" label="1">女</el-radio>
             </el-form-item>
 
-            <el-form-item lable="所在州域" prop = "location" >
+            <el-form-item prop = "location" >
+              <span slot="label">所在州域</span>
               <el-select  v-model="data.location" placeholder="请选择">
                 <el-option
                   v-for="item in data.location_option"
@@ -57,7 +56,7 @@
               <el-input v-model="data.phone" style="width:217px"></el-input>
             </el-form-item>
           
-          <el-form-item  style="text-align: center" label-width="0px">
+          <el-form-item  style="float:right;margin-right:60px" label-width="0px">
             <el-button type="primary" @click="handle_modify()">保存修改</el-button>
           </el-form-item>
           </el-form>
@@ -81,23 +80,63 @@ export default {
         location_option: [
           {
             value: "选项1",
-            label: "龙须面"
+            label: "Johor"
           },
           {
             value: "选项2",
-            label: "燕小六"
+            label: "Kedah"
           },
           {
             value: "选项3",
-            label: "燕小七"
+            label: "Kelantan"
           },
           {
             value: "选项4",
-            label: "燕小八"
+            label: "Kuala Lumpur"
           },
           {
             value: "选项5",
-            label: "燕小九"
+            label: "Labuan"
+          },
+          {
+            value: "选项6",
+            label: "Melaka"
+          },
+          {
+            value: "选项7",
+            label: "Negeri Sembilan"
+          },
+          {
+            value: "选项8",
+            label: "Pahang"
+          },
+          {
+            value: "选项9",
+            label: "Perak"
+          },
+          {
+            value: "选项10",
+            label: "Perlis"
+          },
+          {
+            value: "选项11",
+            label: "Pulau Pinang"
+          },
+          {
+            value: "选项12",
+            label: "Sabah"
+          },
+          {
+            value: "选项13",
+            label: "Sarawak"
+          },
+          {
+            value: "选项14",
+            label: "Selangor"
+          },
+          {
+            value: "选项15",
+            label: "Terengganu"
           }
         ],
         has_pet: "1",
@@ -199,7 +238,7 @@ export default {
   border-radius: 2%;
   background: rgba(255, 255, 255, 0.9);
 }
-.div-a {
+.el-form-item {
   float: left;
   width: 49%;
 }
