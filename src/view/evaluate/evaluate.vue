@@ -247,13 +247,14 @@
   </div>
 
     <!-- 小六，为师告诉你 ，你要记得加费用 -->
-
+  
 
 
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
   name: "evaluate",
   data() {
     return {
@@ -1055,6 +1056,9 @@ export default {
       }
     }      
 },
+=======
+  name: "evaluate" 
+>>>>>>> 539bc335a1633403c41b9fd6d33480a66a60d833
 };
 </script>
 
