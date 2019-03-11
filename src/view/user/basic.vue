@@ -7,61 +7,60 @@
       <div style="height:15px"></div>
       <div style="border-top:1px solid #DCDCDC"></div>
       <el-main>
-        <el-form :model="data" :rules="rules" ref="data" label-width="100px">
-          <div class="div-a">
-            <el-form-item prop="gender" required>
+        <el-form :model="data" label-width="160px" >  
+          
+
+            <el-form-item prop = "gender"  required>
               <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
-              <el-input v-model="data.gender" disabled style="width:217px"></el-input>
+              <el-radio v-model="data.gender" label="2">男</el-radio>
+              <el-radio v-model="data.gender" label="1">女</el-radio>
             </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item  prop="state" label="所在州域" required>
-              <el-input v-model="data.location" style="width:217px"></el-input>
-            </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item  v-model="data.has_pet" label="有无宠物">
-              <el-radio label="1">有</el-radio>
-              <el-radio label="2">无</el-radio>
-            </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item v-model="data.willing" label="收养意愿" required>
-              <el-radio label="1">有</el-radio>
-              <el-radio label="2">无</el-radio>
-            </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item v-model="data.number" label="收养数量" required>
-              <el-input disabled style="width:217px"></el-input>
-            </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item  label="情感状况">
-              <el-select v-model="data.married" placeholder="请选择">
-                <!-- <el-option
-                  v-for="item in options"
+
+            <el-form-item lable="所在州域" prop = "location" >
+              <el-select  v-model="data.location" placeholder="请选择">
+                <el-option
+                  v-for="item in data.location_option"
                   :key="item.value"
                   :label="item.label"
                   :value="item.value"
-                ></el-option> -->
+                ></el-option>
               </el-select>
             </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item  label="电子邮箱">
-              <el-input v-model="data.email" style="width:217px"></el-input>
+          
+         
+            <el-form-item  prop = "has_pet" label="有无宠物">
+              <el-radio v-model="data.has_pet" label="1">有</el-radio>
+              <el-radio v-model="data.has_pet" label="2">无</el-radio>
             </el-form-item>
-          </div>
-          <div class="div-a">
-            <el-form-item label="联系电话">
+          
+            <el-form-item prop = "willing" label="收养意愿" required>
+              <el-radio v-model="data.willing" label="1">有</el-radio>
+              <el-radio v-model="data.willing" label="2">无</el-radio>
+            </el-form-item>
+          
+            <el-form-item prop = "number" label="收养数量" required>
               <el-input v-model="data.number" style="width:217px"></el-input>
             </el-form-item>
-          </div>
-          <el-form-item style="text-align: center" label-width="0px">
-            <el-button  type="primary" @click="handle_modify()">保存修改</el-button>
+          
+            <el-form-item prop = "married" label="情感状况">
+              <el-radio v-model="data.married" label="1">已婚</el-radio>
+              <el-radio v-model="data.married" label="2">未婚</el-radio>
+            </el-form-item>
+          
+          
+            <el-form-item prop = "email" label="电子邮箱">
+              <el-input v-model="data.email" style="width:217px"></el-input>
+            </el-form-item>
+          
+          
+            <el-form-item prop = "phone" label="联系电话">
+              <el-input v-model="data.phone" style="width:217px"></el-input>
+            </el-form-item>
+          
+          <el-form-item  style="text-align: center" label-width="0px">
+            <el-button type="primary" @click="handle_modify()">保存修改</el-button>
           </el-form-item>
-        </el-form>
+          </el-form>
       </el-main>
     </div>
     <div style="height:35px"></div>
@@ -69,30 +68,53 @@
 </template>
 
     <script>
+    import qs from "qs";
 export default {
   name: "basic",
   data() {
     return {
       data: {
-        username: null,
-        email: null,
-        nickname: null,
-        location: null,
-        has_pet: '有',
-        willing: '1',
-        number: null,
-        phone: null,
-        married: '1',
-        gender: '1',
-        description: null,
-      },
-      rules:{
-        
-      },
+        username: "",
+        email: "",
+        nickname: "",
+        location: "",
+        location_option: [
+          {
+            value: "选项1",
+            label: "龙须面"
+          },
+          {
+            value: "选项2",
+            label: "燕小六"
+          },
+          {
+            value: "选项3",
+            label: "燕小七"
+          },
+          {
+            value: "选项4",
+            label: "燕小八"
+          },
+          {
+            value: "选项5",
+            label: "燕小九"
+          }
+        ],
+        has_pet: "1",
+        willing: "1",
+        number: "",
+        phone: "",
+        married: "1",
+        gender: "1",
+        description: ""
+      }
+      // rules:{
+
+      // },
     };
   },
   mounted() {
-    let me = this
+    let me = this;
     let setting = {
       method: "GET",
       url: "http://127.0.0.1:8000/users/get_user_info",
@@ -100,26 +122,65 @@ export default {
         "Content-Type": "application/x-www-form-urlencoded"
       }
     };
-    this.$axios.defaults.withCredentials=true;
+    this.$axios.defaults.withCredentials = true;
     this.$axios(setting).then(response => {
       console.log(response);
-      
-      // me.data.username = response.data.username;
-      // me.data.email = response.data.email;
-      // me.data.nickname = response.data.nickname;
-      // me.data.location = response.data.location;
-      // me.data.has_pet = response.data.has_pet;
-      // me.data.willing = response.data.willing;
-      // me.data.number = response.data.number;
-      // me.data.phone = response.data.phone;
-      // me.data.married = response.data.married;
-      // me.data.gender = response.data.gender;
-      // me.data.description = response.data.description;
+
+      me.data.username = response.data.username;
+      me.data.email = response.data.email;
+      me.data.nickname = response.data.nickname;
+      me.data.location = response.data.location;
+      if(response.data.has_pet==true)
+        me.data.has_pet = "1";
+      else
+        me.data.has_pet = "2";
+      if(response.data.willing==true)
+        me.data.willing = "1";
+      else
+        me.data.willing = "2";
+      if(response.data.married==true)
+        me.data.married = "1";
+      else
+        me.data.married = "2";
+      if(response.data.gender==true)
+        me.data.gender = "1";
+      else
+        me.data.gender = "2";
+      me.data.number = response.data.number;
+      me.data.phone = response.data.phone;
+      me.data.email = response.data.email;
+      me.data.description = response.data.description;
     });
   },
   methods: {
-    handle_modify(){
-
+    handle_modify() {
+      let me = this
+      let postData = qs.stringify({
+        has_pet: this.data.has_pet,
+        willing: this.data.willing,
+        number: this.data.number,
+        phone: this.data.phone,
+        married: this.data.married,
+        gender: this.data.gender,
+        email: this.data.email,
+        description: this.data.description,
+        location: this.data.location,
+      });
+      this.$axios.defaults.withCredentials=true;
+      this.$axios.post("http://127.0.0.1:8000/users/modify",postData)
+        .then(function(response) {
+          console.log(response);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
+          if(response.data.success){
+            alert("修改成功")
+            // me.$router.push('/')
+          }else{
+            alert(response.data.msg)
+          }
+        });
     }
   },
 };
