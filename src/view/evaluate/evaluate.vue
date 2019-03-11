@@ -6,262 +6,343 @@
         <div style="height:15px"></div>
         <h2 style="text-align: center">发布流浪动物信息</h2>
         <div style="height:15px">
-          <el-form-item >
+          <el-form-item>
             <span slot="label">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span>
             <el-input v-model="data.pet_name" type="text" placeholde style="width:217px"></el-input>
           </el-form-item>
-        
+
           <el-form-item required>
             <span slot="label">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
-            <el-select  v-model="data.pet_type" placeholder="请选择">
-            <el-option
-              v-for="item in data.pet_type_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
+            <el-select v-model="data.pet_type" placeholder="请选择">
+              <el-option
+                v-for="item in data.pet_type_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
             </el-select>
           </el-form-item>
-        
+
           <el-form-item required>
             <!--先放一放，问题很大-->
             <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
-             <el-select v-model="data.pet_gender" placeholder="请选择">
-            <el-option
-              v-for="item in data.pet_gender_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+            <el-select v-model="data.pet_gender" placeholder="请选择">
+              <el-option
+                v-for="item in data.pet_gender_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item required>
-            <span slot="label" >年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
+            <span slot="label">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
             <el-input
-            v-model="data.pet_age"
-            type="text"
-            placeholder="请输入年龄（单位为月份）"
-            style="width:217px"
-          ></el-input>
+              v-model="data.pet_age"
+              type="text"
+              placeholder="请输入年龄（单位为月份）"
+              style="width:217px"
+            ></el-input>
           </el-form-item>
-        
+
           <el-form-item label="主要血统" required>
             <el-select v-model="data.primary_breed" filterable placeholder="请选择">
-            <el-option
-              v-for="item in data.primary_breed_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+              <el-option
+                v-for="item in data.primary_breed_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="次要血统">
-             <el-select v-model="data.secondary_breed" filterable placeholder="请选择">
-            <el-option
-              v-for="item in data.secondary_breed_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+            <el-select v-model="data.secondary_breed" filterable placeholder="请选择">
+              <el-option
+                v-for="item in data.secondary_breed_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="主要毛色" required>
             <el-select v-model="data.primary_color" placeholder="请选择">
-            <el-option
-              v-for="item in data.primary_color_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+              <el-option
+                v-for="item in data.primary_color_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="次要毛色">
-           <el-select v-model="data.secondary_color1" placeholder="请选择">
-            <el-option
-              v-for="item in data.secondary_color1_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+            <el-select v-model="data.secondary_color1" placeholder="请选择">
+              <el-option
+                v-for="item in data.secondary_color1_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="再次毛色">
             <el-select v-model="data.secondary_color2" placeholder="请选择">
-            <el-option
-              v-for="item in data.secondary_color2_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+              <el-option
+                v-for="item in data.secondary_color2_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="成熟体型" required>
             <el-select v-model="data.maturity_size" placeholder="请选择">
-            <el-option
-              v-for="item in data.maturity_size_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+              <el-option
+                v-for="item in data.maturity_size_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item required>
             <span slot="label" required>毛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长</span>
             <el-select v-model="data.fur_length" placeholder="请选择">
-            <el-option
-              v-for="item in data.fur_length_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+              <el-option
+                v-for="item in data.fur_length_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="所在州域" required>
-           <el-select v-model="data.state" placeholder="请选择">
-            <el-option
-              v-for="item in data.state_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+            <el-select v-model="data.state" placeholder="请选择">
+              <el-option
+                v-for="item in data.state_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
         </div>
 
-        <div class="div-a" >
+        <div class="div-a">
           <el-form-item label="是否除虫" required>
-           <el-select v-model="data.dewormed" placeholder="请选择">
-            <el-option
-              v-for="item in data.dewormed_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
+            <el-select v-model="data.dewormed" placeholder="请选择">
+              <el-option
+                v-for="item in data.dewormed_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
+
           <el-form-item label="有无疫苗" required>
             <el-select v-model="data.vaccinated" placeholder="请选择">
-            <el-option
-              v-for="item in data.vaccinated_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-          </el-form-item>
-        
-          <el-form-item label="是否绝育" required>
-             <el-select v-model="data.sterilized" placeholder="请选择">
-            <el-option
-              v-for="item in data.sterilized_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-          </el-form-item>
-        
-          <el-form-item label="健康状况" required>
-             <el-select v-model="data.health" placeholder="请选择">
-            <el-option
-              v-for="item in data.health_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-          </el-form-item>
-        </div>
-        
-        <el-form-item >
-            <span slot="label">领养数量</span>
-            <el-input v-model="data.quantity" type="text" placeholde style="width:217px"></el-input>
+              <el-option
+                v-for="item in data.vaccinated_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
 
-          <el-form-item >
-            <span slot="label">领养费用</span>
-            <el-input v-model="data.fee" type="text" placeholde style="width:217px"></el-input>
+          <el-form-item label="是否绝育" required>
+            <el-select v-model="data.sterilized" placeholder="请选择">
+              <el-option
+                v-for="item in data.sterilized_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
- 
-          <el-form-item label="动物图片">
-            <el-upload
-              class="upload-demo"
-              action
-              :on-preview="handlePreview"
-              :on-remove="handleRemove"
-              :before-remove="beforeRemove"
-              multiple
-              :limit="3"
-              :on-exceed="handleExceed"
-              :file-list="fileList"
-            >
-              <el-button size="small" type="primary">点击上传
-                <i class="el-icon-upload el-icon--right"></i>
-              </el-button>
-              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-            </el-upload>
+
+          <el-form-item label="健康状况" required>
+            <el-select v-model="data.health" placeholder="请选择">
+              <el-option
+                v-for="item in data.health_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
           </el-form-item>
-        
-          <el-form-item label="动物视频">
-            <el-upload
-              class="upload-demo"
-              action
-              :on-preview="handlePreview"
-              :on-remove="handleRemove"
-              :before-remove="beforeRemove"
-              multiple
-              :limit="3"
-              :on-exceed="handleExceed"
-              :file-list="fileList"
-            >
-              <el-button size="small" type="primary">点击上传
-                <i class="el-icon-upload el-icon--right"></i>
-              </el-button>
-              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-            </el-upload>
-          </el-form-item>
-        
+        </div>
+
+        <el-form-item>
+          <span slot="label">领养数量</span>
+          <el-input v-model="data.quantity" type="text" placeholde style="width:217px"></el-input>
+        </el-form-item>
+
+        <el-form-item>
+          <span slot="label">领养费用</span>
+          <el-input v-model="data.fee" type="text" placeholde style="width:217px"></el-input>
+        </el-form-item>
+
+        <el-form-item label="动物图片">
+          <el-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed"
+            :file-list="fileList"
+          >
+            <el-button size="small" type="primary">
+              点击上传
+              <i class="el-icon-upload el-icon--right"></i>
+            </el-button>
+            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </el-form-item>
+
+        <el-form-item label="动物视频">
+          <el-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview2"
+            :on-remove="handleRemove2"
+            :before-remove="beforeRemove2"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed2"
+            :file-list="fileList2"
+          >
+            <el-button size="small" type="primary">
+              点击上传
+              <i class="el-icon-upload el-icon--right"></i>
+            </el-button>
+            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </el-form-item>
+
         <!--<el-form-item label="信息确认">-->
         <!--<el-button type="primary" @click="get_url">确认上传图片</el-button>-->
         <!--</el-form-item>-->
-
         <el-form-item label="动物描述">
           <el-input v-model="data.description" type="textarea" rows="3" style="width:590px"></el-input>
         </el-form-item>
 
         <el-form-item style="text-align: center" label-width="-50px">
-          <el-button type="primary" @click="handle_register">提交</el-button>
+          <el-button type="primary" @click="handle_evaluate()">提交</el-button>
         </el-form-item>
       </el-form>
     </el-card>
     <div style="height:30px"></div>
   </div>
 
-    <!-- 小六，为师告诉你 ，你要记得加费用 -->
-  
-
-
+  <!-- 小六，为师告诉你 ，你要记得加费用 -->
 </template>
 
 <script>
 export default {
   name: "evaluate",
+  methods: {
+    handle_evaluate() {
+      let me = this;
+      let postData = qs.stringify({
+
+        pet_name: this.data.pet_name,
+        pet_type: this.data.pet_type,
+        pet_age: this.data.pet_age,
+        pet_gender: this.data.pet_gender,
+        primary_breed: this.data.primary_breed,
+        secondary_breed: this.data.secondary_breed,
+        primary_color: this.data.primary_color,
+        secondary_color1: this.data.secondary_color1,
+        psecondary_color2: this.data.psecondary_color2,
+        maturity_size: this.data.maturity_size,
+        state: this.data.state,
+        dewormed: this.data.dewormed,
+        sterilized: this.data.sterilized,
+        vaccinated: this.data.vaccinated,
+        fee: this.data.fee,
+        video_amt: this.data.video_amt,
+        photo_amt: this.data.photo_amt,
+        description: this.data.description,
+      });
+      console.log(postData);
+
+      this.$axios.defaults.withCredentials = true;
+      this.$axios
+        .post("http://127.0.0.1:8000/pets/publish_pet_information", postData)
+        .then(function(response) {
+          console.log(response);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
+          if (response.data.success) {
+            console.log(response);
+            // me.$router.push('/find-pet')
+            location.reload();
+          } else {
+            alert(response.data.msg);
+          }
+        });
+    },
+      handleRemove(file, fileList) {
+        const isJPG = file.type === 'image/jpeg';
+        const isLt2M = file.size / 1024 / 1024 < 2;
+ 
+        if (!isJPG) {
+          this.$message.error('上传头像图片只能是 JPG 格式!');
+        }
+        if (!isLt2M) {
+          this.$message.error('上传头像图片大小不能超过 2MB!');
+        }
+        
+        console.log(file, fileList);
+        return isJPG && isLt2M;
+      },
+      handlePreview(file) {
+        console.log(file);
+      },
+      handleExceed(files, fileList) {
+        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+      },
+      beforeRemove(file, fileList) {
+        return this.$confirm(`确定移除 ${ file.name }？`);
+      },
+
+      handleRemove2(file, fileList2) {
+        console.log(file, fileList2);
+      },
+      handlePreview2(file) {
+        console.log(file);
+      },
+      handleExceed2(files, fileList2) {
+        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList2.length} 个文件`);
+      },
+      beforeRemove2(file, fileList2) {
+        return this.$confirm(`确定移除 ${ file.name }？`);
+      },
+      
+  },
   data() {
     return {
+      fileList:[],
+      fileList2:[],
       data: {
-
-      fee: 0,
-      pet_name:"",
-      quantity:0,
+        fee: 0,
+        pet_name: "",
+        quantity: 0,
         pet_type: "",
         pet_type_option: [
           {
@@ -288,7 +369,7 @@ export default {
             label: "混合"
           }
         ],
-        description:"这就是只小憨憨",
+        description: "这就是只小憨憨",
         pet_age: "",
         primary_breed: "",
         primary_breed_option: [
@@ -1053,8 +1134,8 @@ export default {
           { value: "3", label: "严重受伤" }
         ]
       }
-    }      
-},
+    };
+  }
 };
 </script>
 
@@ -1075,5 +1156,4 @@ export default {
   float: left;
   width: 49%;
 }
-
 </style>

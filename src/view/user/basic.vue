@@ -1,6 +1,6 @@
 <template>
   <div class="personal-view">
-    <el-menu default-active="1" class="el-menu-vertical-demo personal-sidenav" @select="change_component">
+    <el-menu default-active="user-info" class="el-menu-vertical-demo personal-sidenav" @select="change_component">
       <el-menu-item index="user-info">
         <i class="el-icon-tickets"></i>
         <span slot="title">个人信息</span>
@@ -71,11 +71,13 @@
   margin: 0 auto;
 }
 .personal-sidenav {
+  margin-top: 10%;
   width: 20%;
   float: left;
 }
 .personal-content {
-  width: 75%;
+  width: 80%;
   float: right;
+  margin-top: -20%;
 }
 </style>
