@@ -16,6 +16,7 @@ import evaluate from '@/view/evaluate/evaluate'
 
 //匹配
 import find from '@/view/find/find'
+import findPet from '@/view/find/find-pet'
 
 //数据分析
 import menu from '@/view/dataAnalyse/menuMap'
@@ -67,6 +68,11 @@ export default new Router({
       path : '/basic',
       name : 'basic',
       component : basic
+    },
+    {
+      path : '/findPet',
+      name : 'findPet',
+      component : findPet
     }
   ]
 })
