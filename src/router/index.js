@@ -23,6 +23,7 @@ import menu from '@/view/dataAnalyse/menuMap'
 
 //个人
 import basic from '@/view/user/basic'
+// import userMenu from '@/view/user/user-menu'
 
 //测试echarts
 import echarts from '@/common/echarts/test.vue'
@@ -73,6 +74,7 @@ export default new Router({
       path : '/findPet',
       name : 'findPet',
       component : findPet
-    }
+    },
+
   ]
 })
