@@ -225,18 +225,18 @@ export default {
 };
 </script>
 
-    <style scoped>
+ <style scoped>
 .personal-basic {
-  background-image: url("../../../assets/image_repo/background2.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-image: url("../../../assets/image_repo/background2.jpg");*/
+  /*background-size: 100%;*/
+  /*background-repeat: no-repeat;*/
+  /*background-attachment: fixed;*/
 }
 .form-style {
-  width: 60%;
-  margin-left: 20%;
-  border-radius: 2%;
-  background: rgba(255, 255, 255, 0.9);
+  /*width: 60%;*/
+  /*margin-left: 20%;*/
+  /*border-radius: 2%;*/
+  /*background: rgba(255, 255, 255, 0.9);*/
 }
 .el-form-item {
   float: left;
