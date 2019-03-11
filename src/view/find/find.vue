@@ -57,7 +57,7 @@
         </el-form-item>
 
         <el-form-item label="次要血统">
-          <el-select v-model="data.secondary_breed" placeholder="请选择">
+          <el-select v-model="data.secondary_breed" filterable placeholder="请选择">
             <el-option
               v-for="item in data.secondary_breed_option"
               :key="item.value"
@@ -181,7 +181,7 @@
           <el-button
             type="primary"
             style="float: right;margin-right:-50px"
-            @click="handle_register"
+            @click="handle_find()"
           >提交</el-button>
         </el-form-item>
       </el-form>
@@ -191,11 +191,56 @@
 </template>
 
 <script>
+import qs from "qs";
 export default {
   name: "find",
+        methods: {
+        handle_find(){
+          
+          let me = this
+      let postData = qs.stringify({
+        pet_type:this.data.pet_type,
+        pet_age:this.data.pet_age,
+        pet_gender: this.data.pet_gender,
+        primary_breed: this.data.primary_breed,
+        secondary_breed: this.data.secondary_breed,
+        primary_color: this.data.primary_color,
+        secondary_color1: this.data.secondary_color1,
+        psecondary_color2: this.data.psecondary_color2,
+        maturity_size: this.data.maturity_size,
+        state: this.data.state,
+        dewormed: this.data.dewormed,
+        sterilized: this.data.sterilized,
+        vaccinated: this.data.vaccinated,
+        fee: this.data.fee,
+      });
+      console.log(postData);
+      
+      this.$axios.defaults.withCredentials=true;
+      this.$axios.post("http://127.0.0.1:8000/pets/get_recommand_pets",postData)
+        .then(function(response) {
+          console.log(response);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
+          if(response.data.success){
+            console.log(response);
+            // me.$router.push('/find-pet')
+            location.reload()
+          }else{
+            alert(response.data.msg)
+          }
+        });
+
+
+        },
+      },
   data() {
     return {
+
       data: {
+        
         fee: 0,
         pet_type: "",
         pet_type_option: [
