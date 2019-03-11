@@ -7,15 +7,14 @@ import Vuex from 'vuex'
 import store from "./store/index";
 import echarts from 'echarts'
 
-import axios from 'axios' //引入axios
+
 import qs from 'qs'
 
-
-
-axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+import axios from 'axios' //引入axios
+Vue.prototype.$axios=axios;
+axios.defaults.headers['Content-Type']='application/x-www-form-urlencoded';
 axios.defaults.withCredentials=true;
 
-Vue.prototype.$axios=axios;
 Vue.use(echarts);
 Vue.config.productionTip = false;
 Vue.use(Vuex);

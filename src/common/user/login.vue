@@ -46,28 +46,15 @@
 
 <script>
 import qs from "qs";
-import { log } from 'util';
 
 export default {
   name: "login",
-    mounted() {
-      console.log('ojbk');
-    let setting = {
-      method: "GET",
-      url: "http://127.0.0.1:8000/users/get_user_info",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      }
-    };
-    this.$axios(setting).then(response => {
-      console.log(response);
-    });
-  },
+
   data() {
     return {
       form: {
         username: null,
-        password: null
+        password: null,
       },
       rules: {
         username: [
@@ -82,27 +69,25 @@ export default {
     };
   },
   
-
   methods: {
     handle_submit() {
-      let me = this;
+      let me = this
       let postData = qs.stringify({
         username: this.form.username,
-        password: this.form.password
+        password: this.form.password,
       });
       this.$axios.defaults.withCredentials=true;
-      this.$axios
-        .post("http://127.0.0.1:8000/users/login", postData)
+      this.$axios.post("http://127.0.0.1:8000/users/login",postData)
         .then(function(response) {
-          // console.log(response.data);
-          // console.log(response.status);
-          // console.log(response.statusText);
-          // console.log(response.headers);
-          // console.log(response.config);
-          if (response.data.success) {
-            me.$router.push("/");
-          } else {
-            alert(response.data.msg);
+          console.log(response);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
+          if(response.data.success){
+            me.$router.push('/')
+          }else{
+            alert(response.data.msg)
           }
         });
     }
