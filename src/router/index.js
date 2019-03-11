@@ -28,6 +28,9 @@ import basic from '@/view/user/basic'
 //测试echarts
 import echarts from '@/common/echarts/test.vue'
 
+//pet
+import selectPet from '@/view/pet/select-pet'
+
 export default new Router({
   routes: [
     {
@@ -74,6 +77,11 @@ export default new Router({
       path : '/findPet',
       name : 'findPet',
       component : findPet
+    },
+    {
+      path : '/selectPet',
+      name : 'selectPet',
+      component : selectPet
     },
 
   ]
