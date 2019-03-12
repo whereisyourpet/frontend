@@ -3,6 +3,7 @@
     <el-container class="background">
       <el-card class="form-style">
         <el-form label-width="100px">
+          <div style="height:15px"></div>
           <h2 style="text-align: center">发布流浪动物信息</h2>
           <div style="height:15px">
             <el-form-item>
@@ -1057,66 +1058,21 @@ export default {
 
         state: "",
         state_option: [
-          {
-            value: "1",
-            label: "Johor"
-          },
-          {
-            value: "2",
-            label: "Kedah"
-          },
-          {
-            value: "3",
-            label: "Kelantan"
-          },
-          {
-            value: "4",
-            label: "Kuala Lumpur"
-          },
-          {
-            value: "5",
-            label: "Labuan"
-          },
-          {
-            value: "6",
-            label: "Melaka"
-          },
-          {
-            value: "7",
-            label: "Negeri Sembilan"
-          },
-          {
-            value: "8",
-            label: "Pahang"
-          },
-          {
-            value: "9",
-            label: "Perak"
-          },
-          {
-            value: "10",
-            label: "Perlis"
-          },
-          {
-            value: "11",
-            label: "Pulau Pinang"
-          },
-          {
-            value: "12",
-            label: "Sabah"
-          },
-          {
-            value: "13",
-            label: "Sarawak"
-          },
-          {
-            value: "14",
-            label: "Selangor"
-          },
-          {
-            value: "15",
-            label: "Terengganu"
-          }
+          { value: "41336", label: "Johor" },
+          { value: "41325", label: "Kedah" },
+          { value: "41367", label: "Kelantan" },
+          { value: "41401", label: "Kuala Lumpur" },
+          { value: "41415", label: "Labuan" },
+          { value: "41324", label: "Melaka" },
+          { value: "41332", label: "Negeri Sembilan" },
+          { value: "41335", label: "Pahang" },
+          { value: "41330", label: "Perak" },
+          { value: "41380", label: "Perlis" },
+          { value: "41327", label: "Pulau Pinang" },
+          { value: "41345", label: "Sabah" },
+          { value: "41342", label: "Sarawak" },
+          { value: "41326", label: "Selangor" },
+          { value: "41361", label: "Terengganu" }
         ],
         dewormed: "",
         dewormed_option: [
@@ -1149,22 +1105,15 @@ export default {
 </script>
 
 <style scoped>
-/* .body {
-  background-image: url("../../assets/image_repo/background1.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
 .background {
   background-image: url("../../assets/image_repo/background-golden.jpg");
 }
-
 .form-style {
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 2%;
   margin-top: 30px;
   margin-bottom: 70px;
-  width: 70%;
-  margin-left: 15%;
-  border-radius: 2%;
   background: rgba(255, 255, 255, 0.9);
 }
 .el-form-item {
