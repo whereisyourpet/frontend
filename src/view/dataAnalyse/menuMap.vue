@@ -22,7 +22,10 @@
         <!--<span slot="title">导航四</span>-->
       <!--</el-menu-item>-->
     </el-menu>
-  </div>
+    <el-main class="personal-content">
+      <component :is="componentName"></component>
+    </el-main>
+      </div>
 </template>
 
 <script>
