@@ -12,6 +12,7 @@ import qs from 'qs'
 
 import axios from 'axios' //引入axios
 Vue.prototype.$axios=axios;
+Vue.prototype.$echarts = echarts
 axios.defaults.headers['Content-Type']='application/x-www-form-urlencoded';
 axios.defaults.withCredentials=true;
 
