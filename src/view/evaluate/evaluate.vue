@@ -232,16 +232,15 @@
             </el-upload>
           </el-form-item>
 
-          <!--<el-form-item label="信息确认">-->
-          <!--<el-button type="primary" @click="get_url">确认上传图片</el-button>-->
-          <!--</el-form-item>-->
-          <el-form-item label="动物描述">
-            <el-input v-model="data.description" type="textarea" rows="3" style="width:590px"></el-input>
+          <el-form-item label="动物描述" id="description_input">
+            <el-input v-model="data.description" type="textarea" rows="3"></el-input>
           </el-form-item>
 
-          <el-form-item style="text-align: center" label-width="-50px">
-            <el-button type="primary" @click="handle_evaluate()">提交</el-button>
-          </el-form-item>
+          <el-row>
+            <el-col :span="6" :offset="9">
+              <el-button type="primary" id="submit_button" @click="handle_evaluate()">提交</el-button>
+            </el-col>
+          </el-row>
         </el-form>
       </el-card>
     </el-container>
@@ -1109,8 +1108,8 @@ export default {
   background-image: url("../../assets/image_repo/background-golden.jpg");
 }
 .form-style {
-  width: 60%;
-  margin-left: 20%;
+  width: 70%;
+  margin-left: 15%;
   border-radius: 2%;
   margin-top: 30px;
   margin-bottom: 70px;
@@ -1119,5 +1118,13 @@ export default {
 .el-form-item {
   float: left;
   width: 49%;
+}
+
+#submit_button {
+  width: 100%;
+}
+
+#description_input {
+  width: 95%;
 }
 </style>
