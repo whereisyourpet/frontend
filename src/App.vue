@@ -38,16 +38,15 @@ export default {
 }
 
 .background {
-  background-image: url("assets/image_repo/background.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  position: absolute;
-  top: 60px;
-  bottom: 0px;
-  left: 0px;
+}
+
+.el-main {
+  padding: 0;
 }
 
 .el-header,
@@ -56,9 +55,10 @@ export default {
 }
 
 .el-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
+  z-index: 1010;
 }
 
 body {

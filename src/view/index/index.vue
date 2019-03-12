@@ -40,6 +40,14 @@ export default {
   background-attachment: fixed;
 } */
 
+.background {
+  background-image: url("../../assets/image_repo/background.jpg");
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .img-block {
   width: 18%;
   height: 40%;

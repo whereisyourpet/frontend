@@ -129,6 +129,14 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  background-image: url("../../assets/image_repo/background.jpg");
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .centerPage {
   margin-left: 65%;
 }
