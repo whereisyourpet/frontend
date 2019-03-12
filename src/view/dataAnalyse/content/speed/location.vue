@@ -5,7 +5,7 @@
 <script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/malaysiaLow.js"></script>
 <script>
-
+import AmCharts from "amcharts3"
 export default {
   
   name: "hello",
