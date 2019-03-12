@@ -4,14 +4,14 @@
 <el-menu mode="horizontal"
       class="el-menu-vertical-demo personal-sidenav"
       @select="change_component">
-      <el-menu-item index="type"><el-button type="primary" round >种类</el-button></el-menu-item>
-      <el-menu-item index="gender"><el-button type="primary" round >性别</el-button></el-menu-item>
-      <el-menu-item index="MaturitySize"><el-button type="primary" round >体型</el-button></el-menu-item>
-      <el-menu-item index="FurLength"><el-button type="primary" round >毛长</el-button></el-menu-item>
-      <el-menu-item index="Dewormed"><el-button type="primary" round >驱虫</el-button></el-menu-item>
-      <el-menu-item index="Vaccinated"><el-button type="primary" round >疫苗</el-button></el-menu-item>
-      <el-menu-item index="Quantity"><el-button type="primary" round >数量</el-button></el-menu-item>
-      <el-menu-item index="fee"><el-button type="primary" round ></el-button></el-menu-item>
+      <el-menu-item index="type" ><el-button type="primary" round>种类</el-button></el-menu-item>
+      <el-menu-item index="gender" ><el-button type="primary" round >性别</el-button></el-menu-item>
+      <el-menu-item index="MaturitySize" ><el-button type="primary" round >体型</el-button></el-menu-item>
+      <el-menu-item index="FurLength" ><el-button type="primary" round >毛长</el-button></el-menu-item>
+      <el-menu-item index="Dewormed" ><el-button type="primary" round >驱虫</el-button></el-menu-item>
+      <el-menu-item index="Vaccinated" ><el-button type="primary" round >疫苗</el-button></el-menu-item>
+      <el-menu-item index="Quantity" ><el-button type="primary" round >数量</el-button></el-menu-item>
+
       
      
 </el-menu>

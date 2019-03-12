@@ -11,6 +11,7 @@
       <el-menu-item index="Dewormed"><el-button type="primary" round >驱虫</el-button></el-menu-item>
       <el-menu-item index="Vaccinated"><el-button type="primary" round >疫苗</el-button></el-menu-item>
       <el-menu-item index="Quantity"><el-button type="primary" round >数量</el-button></el-menu-item>
+      <el-menu-item index="location"><el-button type="primary" round >地域</el-button></el-menu-item>
       
      
 </el-menu>
@@ -29,6 +30,7 @@ import Quantity from "../content/speed/Quantity";
 import Vaccinated from "../content/speed/Vaccinated";
 import Dewormed from "../content/speed/Dewormed";
 import FurLength from "../content/speed/FurLength";
+import location from "../content/speed/location";
 import { mapState } from "vuex";
 
 export default {
@@ -68,6 +70,9 @@ export default {
         case "FurLength":
           this.componentName = "FurLength";
           break;
+          case "location":
+          this.componentName = "location";
+          break;
 
         default:
           break;
@@ -84,7 +89,8 @@ export default {
     Quantity,
     Vaccinated,
     Dewormed,
-    FurLength
+    FurLength,
+    location
   }
 };
 </script>

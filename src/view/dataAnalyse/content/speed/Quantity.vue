@@ -7,7 +7,10 @@ export default {
   name: "hello",
   data() {
     return {
-      msg: "Dewormed_adoption_speed"
+      msg: "Dewormed_adoption_speed",
+          x:'center',
+        y:'top',
+        textAlign:'left'
     };
   },
   mounted() {
@@ -21,7 +24,7 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "待收养数量与收养速度的关系"
+          text: "收养速度与待收养数量的关系"
         },
         tooltip: {},
         color:	'	#7AC5CD',
