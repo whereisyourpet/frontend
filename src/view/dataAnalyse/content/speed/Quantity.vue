@@ -1,5 +1,5 @@
 <template>
-  <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+  <div id="myChart" :style="{width: '600px', height: '450px'}"></div>
 </template>
 
 <script>
@@ -24,33 +24,53 @@ export default {
           text: "待收养数量与收养速度的关系"
         },
         tooltip: {},
+        color:	'	#7AC5CD',
         legend: {
           data: [""]
         },
         xAxis: {
           data: [
-            "1只",
-            "2只",
-            "3只",
-            "4只",
-            "5只",
-            "6只",
-            "7只",
-            "8只",
-            "9只",
-            "10只",
-            "11只",
-            "12只",
-            "13只",
-            "14只",
-            "15只",
-            "16只",
-            "17只",
-            "18只",
-            "20只"
-          ]
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "20"
+          ],
+          name:'/只',
+          nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "20"
         },
-        yAxis: { min: 2 },
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }
+        },
+        yAxis: { min: 2,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }  },
         series: [
           {
             name: "被收养速度",

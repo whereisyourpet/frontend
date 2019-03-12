@@ -229,8 +229,8 @@ export default {
           console.log(response.config);
           if (response.data.success) {
             console.log(response);
-            // me.$router.push('/find-pet')
-            location.reload();
+            me.$router.push('/find-pet')
+            // location.reload();
           } else {
             alert(response.data.msg);
           }

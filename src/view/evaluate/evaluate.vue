@@ -273,8 +273,8 @@ export default {
         sterilized: this.data.sterilized,
         vaccinated: this.data.vaccinated,
         fee: this.data.fee,
-        video_amt: this.data.video_amt,
-        photo_amt: this.data.photo_amt,
+        video_amt: 1,
+        photo_amt: 1,
         health: this.data.health,
         description: this.data.description,
         quantity: this.data.quantity
