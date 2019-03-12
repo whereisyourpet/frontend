@@ -16,9 +16,11 @@ Vue.prototype.$echarts = echarts
 axios.defaults.headers['Content-Type']='application/x-www-form-urlencoded';
 axios.defaults.withCredentials=true;
 
-Vue.use(echarts);
+
 Vue.config.productionTip = false;
 Vue.use(Vuex);
+
+Vue.use(echarts);
 //import element-ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
