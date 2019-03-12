@@ -1,5 +1,5 @@
 <template>
-  <div class="register">
+  <div class="register background">
     <div class="centerPage">
       <div style="height:30px"></div>
       <el-card class="card_style">
@@ -74,17 +74,24 @@ export default {
           { required: true, message: "请输入用户名", trigger: "blur" },
           { max: 12, message: "用户名长度应小于12个字符", trigger: "blur" }
         ],
-        nickname: [{ required: true, message: "请输入昵称", trigger: "blur" },
-            {max: 16, message: "昵称请小于16个字符", trigger: "blur" }],
+        nickname: [
+          { required: true, message: "请输入昵称", trigger: "blur" },
+          { max: 16, message: "昵称请小于16个字符", trigger: "blur" }
+        ],
         password: [
           { validator: validatePass, trigger: "blur" },
           { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 6, max: 12, message: "密码长度在 6 到18个字符", trigger: "blur" }
-          ],
+          {
+            min: 6,
+            max: 12,
+            message: "密码长度在 6 到18个字符",
+            trigger: "blur"
+          }
+        ],
 
         password2: [
           { validator: validatePass2, trigger: "blur" },
-          { required: true, message: "请输入密码", trigger: "blur" },
+          { required: true, message: "请输入密码", trigger: "blur" }
         ]
       }
     };
@@ -122,12 +129,6 @@ export default {
 </script>
 
 <style scoped>
-.register {
-  background-image: url("../../assets/image_repo/background.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .centerPage {
   margin-left: 65%;
 }

@@ -14,9 +14,9 @@
               <el-radio v-model="data.gender" label="1">女</el-radio>
             </el-form-item>
 
-            <el-form-item prop = "location" >
+            <el-form-item required  prop = "location" >
               <span slot="label">所在州域</span>
-              <el-select  v-model="data.location" placeholder="请选择">
+              <el-select required   v-model="data.location" placeholder="请选择">
                 <el-option
                   v-for="item in data.location_option"
                   :key="item.value"

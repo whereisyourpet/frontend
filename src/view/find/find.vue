@@ -194,53 +194,52 @@
 import qs from "qs";
 export default {
   name: "find",
-        methods: {
-        handle_find(){
-          
-          let me = this
+  methods: {
+    handle_find() {
+      let me = this;
       let postData = qs.stringify({
-        pet_type:this.data.pet_type,
-        pet_age:this.data.pet_age,
+        pet_type: this.data.pet_type,
+        pet_age: this.data.pet_age,
         pet_gender: this.data.pet_gender,
         primary_breed: this.data.primary_breed,
         secondary_breed: this.data.secondary_breed,
         primary_color: this.data.primary_color,
         secondary_color1: this.data.secondary_color1,
-        psecondary_color2: this.data.psecondary_color2,
+        secondary_color2: this.data.secondary_color2,
         maturity_size: this.data.maturity_size,
         state: this.data.state,
         dewormed: this.data.dewormed,
         sterilized: this.data.sterilized,
         vaccinated: this.data.vaccinated,
         fee: this.data.fee,
+        health: this.data.health,
+        fur_length: this.data.fur_length,
+        k:10
       });
       console.log(postData);
-      
-      this.$axios.defaults.withCredentials=true;
-      this.$axios.post("http://127.0.0.1:8000/pets/get_recommand_pets",postData)
+
+      this.$axios.defaults.withCredentials = true;
+      this.$axios
+        .post("http://127.0.0.1:8000/pets/get_recommand_pets", postData)
         .then(function(response) {
           console.log(response);
           console.log(response.status);
           console.log(response.statusText);
           console.log(response.headers);
           console.log(response.config);
-          if(response.data.success){
+          if (response.data.success) {
             console.log(response);
-            // me.$router.push('/find-pet')
-            location.reload()
-          }else{
-            alert(response.data.msg)
+            me.$router.push('/find-pet')
+            // location.reload();
+          } else {
+            alert(response.data.msg);
           }
         });
-
-
-        },
-      },
+    }
+  },
   data() {
     return {
-
       data: {
-        
         fee: 0,
         pet_type: "",
         pet_type_option: [
@@ -934,14 +933,15 @@ export default {
           { value: "1", label: "小型" },
           { value: "2", label: "中型" },
           { value: "3", label: "大型" },
-          { value: "4", label: "超大型" }
+          { value: "4", label: "超大型" },
+          { value: "0", label: "不清楚" }
         ],
         fur_length: "",
         fur_length_option: [
           { value: "1", label: "短" },
           { value: "2", label: "中" },
           { value: "3", label: "长" },
-          { value: "4", label: "不清楚" }
+          { value: "0", label: "不清楚" }
         ],
 
         state: "",
@@ -1029,7 +1029,8 @@ export default {
         health_option: [
           { value: "1", label: "健康" },
           { value: "2", label: "轻微受伤" },
-          { value: "3", label: "严重受伤" }
+          { value: "3", label: "严重受伤" },
+          { value: "0", label: "不清楚" },
         ]
       }
       // rules:{
