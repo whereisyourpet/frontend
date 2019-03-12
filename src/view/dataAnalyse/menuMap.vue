@@ -4,11 +4,11 @@
       default-active="like"
       class="el-menu-vertical-demo personal-sidenav"
       @select="change_component">
-      <el-menu-item index="speed">
+      <el-menu-item index="like">
         <i class="el-icon-tickets"></i>
         <span slot="title">受欢迎程度</span>
       </el-menu-item>
-      <el-menu-item index="like">
+      <el-menu-item index="speed">
         <i class="el-icon-menu"></i>
         <span slot="title">被收养速度</span>
       </el-menu-item>
@@ -61,7 +61,7 @@
         }
       },
       mounted() {
-        this.componentName = 'speed'
+        this.componentName = 'like'
       },
       components:{
         speed,
