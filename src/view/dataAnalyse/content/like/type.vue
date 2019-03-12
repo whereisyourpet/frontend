@@ -21,7 +21,10 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "动物种类与受欢迎程度的关系"
+          text: "受欢迎程度与动物种类的关系",
+          x:'center',
+        y:'top',
+        textAlign:'left'
         },
         tooltip: {},
         color: "	#7AC5CD",

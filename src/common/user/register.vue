@@ -64,10 +64,10 @@ export default {
 
     return {
       form: {
-        username: null,
-        password: null,
-        password2: null,
-        nickname: null
+        username: "",
+        password: "",
+        password2: "",
+        nickname: ""
       },
       rules: {
         username: [
@@ -91,15 +91,41 @@ export default {
 
         password2: [
           { validator: validatePass2, trigger: "blur" },
-          { required: true, message: "请输入密码", trigger: "blur" }
+          { required: true, message: "请输入确认密码", trigger: "blur" }
         ]
       }
     };
   },
   methods: {
     handle_register() {
+      if (this.form.username.length == 0) {
+        this.$notify.info({
+          title: "提示",
+          message: "请输入用户名",
+        });
+        return;
+      }
+
+      if (this.form.nickname.length == 0) {
+        this.$notify.info({
+          title: "提示",
+          message: "请输入昵称",
+        });
+        return;
+      }
+
+      if (this.form.password.length < 6) {
+        this.$notify.info({
+          title: "提示",
+          message: "密码长度应在6-18位",
+        });
+        return;
+      }
       if (this.form.password !== this.form.password2) {
-        alert("两次密码不一致");
+        this.$notify.info({
+          title: "提示",
+          message: "两次密码不一致",
+        });
         return;
       }
       let me = this;
@@ -118,9 +144,18 @@ export default {
           // console.log(response.headers);
           // console.log(response.config);
           if (response.data.success) {
+            me.$message({
+          message: "注册成功，请登录",
+          type: 'success',
+          center: true
+        })
             me.$router.push("/login");
           } else {
-            alert(response.data.msg);
+            me.form.username=""
+            me.$notify.error({
+              title: "错误",
+              message: response.data.msg
+            });
           }
         });
     }

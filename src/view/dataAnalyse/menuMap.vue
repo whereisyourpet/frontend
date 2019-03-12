@@ -4,7 +4,7 @@
       default-active="like"
       class="el-menu-vertical-demo personal-sidenav"
       @select="change_component">
-      <el-menu-item index="like">
+      <el-menu-item index="like" >
         <i class="el-icon-tickets"></i>
         <span slot="title">受欢迎程度</span>
       </el-menu-item>
@@ -83,11 +83,11 @@
 }
 .personal-sidenav {
   margin-top: 10%;
-  width: 20%;
+  width: 15%;
   float: left;
 }
 .personal-content {
-  width: 80%;
+  width: 85%;
   float: right;
   margin-top: -20%;
 }

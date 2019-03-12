@@ -21,7 +21,10 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "待收养数量与受欢迎程度的关系"
+          text: "受欢迎程度与待收养数量的关系",
+          x:'center',
+        y:'top',
+        textAlign:'left'
         },
         tooltip: {},
         color:	'	#7AC5CD',

@@ -21,7 +21,10 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "是否接种疫苗与收养速度的关系"
+          text: "收养速度与是否接种疫苗的关系",
+          x:'center',
+        y:'top',
+        textAlign:'left'
         },
         tooltip: {},
         color:	'	#7AC5CD',

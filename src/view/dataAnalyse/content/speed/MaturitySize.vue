@@ -21,7 +21,10 @@ export default {
       // 绘制图表
       myChart.setOption({
         title: {
-          text: "动物成熟体长与收养速度的关系"
+          text: "收养速度与动物成熟体长的关系",
+          x:'center',
+        y:'top',
+        textAlign:'left'
         },
         tooltip: {},
         color:	'	#7AC5CD',
