@@ -1,192 +1,191 @@
 <template>
-  <div class="body background">
-    <div style="height:30px"></div>
-    <el-card class="form-style">
-      <el-form label-width="100px">
-        <div style="height:15px"></div>
-        <h2 style="text-align: center">添加你的喜欢参数</h2>
-        <div style="height:15px"></div>
-        <el-form-item label="领养费用">
-          <el-input v-model="data.fee" type="text" placeholder="货币单位MYR" style="width:217px"></el-input>
-        </el-form-item>
+  <div class="body">
+    <el-container class="background">
+      <el-card class="form-style">
+        <el-form label-width="100px">
+          <div style="height:15px"></div>
+          <h2 style="text-align: center">添加你的喜欢参数</h2>
+          <div style="height:15px"></div>
+          <el-form-item label="领养费用">
+            <el-input v-model="data.fee" type="text" placeholder="货币单位MYR" style="width:217px"></el-input>
+          </el-form-item>
 
-        <el-form-item>
-          <span slot="label">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
-          <el-select v-model="data.pet_type" placeholder="请选择">
-            <el-option
-              v-for="item in data.pet_type_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item>
+            <span slot="label">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
+            <el-select v-model="data.pet_type" placeholder="请选择">
+              <el-option
+                v-for="item in data.pet_type_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item>
-          <!--先放一放，问题很大-->
-          <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
-          <el-select v-model="data.pet_gender" placeholder="请选择">
-            <el-option
-              v-for="item in data.pet_gender_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item>
+            <!--先放一放，问题很大-->
+            <span slot="label">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
+            <el-select v-model="data.pet_gender" placeholder="请选择">
+              <el-option
+                v-for="item in data.pet_gender_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item>
-          <span slot="label">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
-          <el-input
-            v-model="data.pet_age"
-            type="text"
-            placeholder="请输入年龄（单位为月份）"
-            style="width:217px"
-          ></el-input>
-        </el-form-item>
+          <el-form-item>
+            <span slot="label">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
+            <el-input
+              v-model="data.pet_age"
+              type="text"
+              placeholder="请输入年龄（单位为月份）"
+              style="width:217px"
+            ></el-input>
+          </el-form-item>
 
-        <el-form-item label="主要血统">
-          <el-select v-model="data.primary_breed" filterable placeholder="请选择">
-            <el-option
-              v-for="item in data.primary_breed_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="主要血统">
+            <el-select v-model="data.primary_breed" filterable placeholder="请选择">
+              <el-option
+                v-for="item in data.primary_breed_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="次要血统">
-          <el-select v-model="data.secondary_breed" filterable placeholder="请选择">
-            <el-option
-              v-for="item in data.secondary_breed_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="次要血统">
+            <el-select v-model="data.secondary_breed" filterable placeholder="请选择">
+              <el-option
+                v-for="item in data.secondary_breed_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="主要毛色">
-          <el-select v-model="data.primary_color" placeholder="请选择">
-            <el-option
-              v-for="item in data.primary_color_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="主要毛色">
+            <el-select v-model="data.primary_color" placeholder="请选择">
+              <el-option
+                v-for="item in data.primary_color_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="次要毛色">
-          <el-select v-model="data.secondary_color1" placeholder="请选择">
-            <el-option
-              v-for="item in data.secondary_color1_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="次要毛色">
+            <el-select v-model="data.secondary_color1" placeholder="请选择">
+              <el-option
+                v-for="item in data.secondary_color1_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="再次毛色">
-          <el-select v-model="data.secondary_color2" placeholder="请选择">
-            <el-option
-              v-for="item in data.secondary_color2_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="再次毛色">
+            <el-select v-model="data.secondary_color2" placeholder="请选择">
+              <el-option
+                v-for="item in data.secondary_color2_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="成熟体型">
-          <el-select v-model="data.maturity_size" placeholder="请选择">
-            <el-option
-              v-for="item in data.maturity_size_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="成熟体型">
+            <el-select v-model="data.maturity_size" placeholder="请选择">
+              <el-option
+                v-for="item in data.maturity_size_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item>
-          <span slot="label">毛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长</span>
-          <el-select v-model="data.fur_length" placeholder="请选择">
-            <el-option
-              v-for="item in data.fur_length_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item>
+            <span slot="label">毛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长</span>
+            <el-select v-model="data.fur_length" placeholder="请选择">
+              <el-option
+                v-for="item in data.fur_length_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="所在州域">
-          <el-select v-model="data.state" placeholder="请选择">
-            <el-option
-              v-for="item in data.state_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="所在州域">
+            <el-select v-model="data.state" placeholder="请选择">
+              <el-option
+                v-for="item in data.state_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="是否除虫">
-          <el-select v-model="data.dewormed" placeholder="请选择">
-            <el-option
-              v-for="item in data.dewormed_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="是否除虫">
+            <el-select v-model="data.dewormed" placeholder="请选择">
+              <el-option
+                v-for="item in data.dewormed_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="有无疫苗">
-          <el-select v-model="data.vaccinated" placeholder="请选择">
-            <el-option
-              v-for="item in data.vaccinated_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="有无疫苗">
+            <el-select v-model="data.vaccinated" placeholder="请选择">
+              <el-option
+                v-for="item in data.vaccinated_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="是否绝育">
-          <el-select v-model="data.sterilized" placeholder="请选择">
-            <el-option
-              v-for="item in data.sterilized_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
+          <el-form-item label="是否绝育">
+            <el-select v-model="data.sterilized" placeholder="请选择">
+              <el-option
+                v-for="item in data.sterilized_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
 
-        <el-form-item label="健康状况">
-          <el-select v-model="data.health" placeholder="请选择">
-            <el-option
-              v-for="item in data.health_option"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item style="text-align: center">
-          <el-button
-            type="primary"
-            style="float: right;margin-right:-50px"
-            @click="handle_find()"
-          >提交</el-button>
-        </el-form-item>
-      </el-form>
-    </el-card>
-    <div style="height:30px"></div>
+          <el-form-item label="健康状况">
+            <el-select v-model="data.health" placeholder="请选择">
+              <el-option
+                v-for="item in data.health_option"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
+
+          <el-row>
+            <el-col :span="6" :offset="9">
+              <el-button type="primary" id="submit_button" @click="handle_find()">提交</el-button>
+            </el-col>
+          </el-row>
+        </el-form>
+      </el-card>
+    </el-container>
   </div>
 </template>
 
@@ -214,7 +213,7 @@ export default {
         fee: this.data.fee,
         health: this.data.health,
         fur_length: this.data.fur_length,
-        k:10
+        k: 10
       });
       console.log(postData);
 
@@ -229,7 +228,7 @@ export default {
           console.log(response.config);
           if (response.data.success) {
             console.log(response);
-            me.$router.push('/find-pet')
+            me.$router.push("/find-pet");
             // location.reload();
           } else {
             alert(response.data.msg);
@@ -1030,7 +1029,7 @@ export default {
           { value: "1", label: "健康" },
           { value: "2", label: "轻微受伤" },
           { value: "3", label: "严重受伤" },
-          { value: "0", label: "不清楚" },
+          { value: "0", label: "不清楚" }
         ]
       }
       // rules:{
@@ -1042,25 +1041,24 @@ export default {
 </script>
 
 <style scoped>
-/* .body {
-  background-image: url("../../assets/image_repo/background1.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
-
 .background {
   background-image: url("../../assets/image_repo/background-golden.jpg");
 }
 
 .form-style {
-  width: 60%;
-  margin-left: 20%;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 30px;
+  margin-bottom: 70px;
   border-radius: 2%;
   background: rgba(255, 255, 255, 0.9);
 }
 .el-form-item {
   float: left;
   width: 49%;
+}
+
+#submit_button {
+  width: 100%;
 }
 </style>
