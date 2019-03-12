@@ -1,5 +1,5 @@
 <template>
-  <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+  <div id="myChart" :style="{width: '600px', height: '450px'}"></div>
 </template>
 
 <script>
@@ -24,13 +24,28 @@ export default {
           text: "是否除虫与收养速度的关系"
         },
         tooltip: {},
+        color:	'	#7AC5CD',
         legend: {
           data: [""]
         },
         xAxis: {
-          data: ["是", "否", "不清楚"]
+          data: ["是", "否", "不清楚"],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }
         },
-        yAxis: { min: 2 },
+        yAxis: { min: 2,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }  },
         series: [
           {
             name: "被收养速度",

@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="body background">
     <div style="height:30px"></div>
     <el-card class="form-style">
       <el-form label-width="100px">
@@ -1042,12 +1042,17 @@ export default {
 </script>
 
 <style scoped>
-.body {
+/* .body {
   background-image: url("../../assets/image_repo/background1.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+} */
+
+.background {
+  background-image: url("../../assets/image_repo/background-golden.jpg");
 }
+
 .form-style {
   width: 60%;
   margin-left: 20%;

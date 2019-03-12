@@ -74,6 +74,9 @@ export default {
       }
     }
   },
+  mounted() {
+        this.componentName = 'type'
+      },
   components: {
     type,
     gender,

@@ -11,11 +11,12 @@
       <el-menu-item index="Dewormed"><el-button type="primary" round >驱虫</el-button></el-menu-item>
       <el-menu-item index="Vaccinated"><el-button type="primary" round >疫苗</el-button></el-menu-item>
       <el-menu-item index="Quantity"><el-button type="primary" round >数量</el-button></el-menu-item>
+      <el-menu-item index="fee"><el-button type="primary" round ></el-button></el-menu-item>
       
      
 </el-menu>
 
-    <el-main class="personal-content">
+    <el-main class="personal-content" style="margin-left:100px">
       <component :is="componentName"></component>
     </el-main>
   </div>
@@ -74,6 +75,9 @@ export default {
       }
     }
   },
+  mounted() {
+        this.componentName = 'type'
+      },
   components: {
     type,
     gender,
