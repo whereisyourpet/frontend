@@ -1,25 +1,29 @@
 <template>
-  <div>
-    <el-card class="img-block">
-      <div>
-        <a href="index.vue">
-          <img class="img-button" src="../../assets/image_repo/doge_meitu_1_s.png">
-        </a>
-      </div>
-      <div style="height:30px"></div>
-      <div>
-        <a href="index.vue">
-          <img class="img-button" src="../../assets/image_repo/doge_meitu_3_s.png">
-        </a>
-      </div>
-      <div style="height:30px"></div>
-      <div>
-        <a href="index.vue">
-          <img class="img-button" src="../../assets/image_repo/doge_meitu_2_s.png">
-        </a>
-      </div>
-    </el-card>
-  </div>
+  <el-container class="background">
+    <el-row>
+      <el-col :span="22" :offset="15">
+        <el-card class="img-block">
+          <div>
+            <a href="index.vue">
+              <img class="img-button" src="../../assets/image_repo/doge_meitu_1_s.png">
+            </a>
+          </div>
+          <div style="height:30px"></div>
+          <div>
+            <a href="index.vue">
+              <img class="img-button" src="../../assets/image_repo/doge_meitu_3_s.png">
+            </a>
+          </div>
+          <div style="height:30px"></div>
+          <div>
+            <a href="index.vue">
+              <img class="img-button" src="../../assets/image_repo/doge_meitu_2_s.png">
+            </a>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </el-container>
 </template>   
 
 <script>
@@ -29,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-/* .body {
+/* .background {
   background-image: url("../../assets/image_repo/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -39,7 +43,7 @@ export default {
 .img-block {
   width: 18%;
   height: 40%;
-  margin-left: 65%;
+  margin-top: 100px;
 }
 .img-button {
   height: 60%;

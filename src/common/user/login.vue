@@ -1,5 +1,5 @@
 <template>
-  <div class="Login">
+  <div class="Login background">
     <div class="centerPage">
       <div style="height:92px"></div>
       <el-card style="width:350px;left: 20%" align="left" class="card_style">
@@ -54,7 +54,7 @@ export default {
     return {
       form: {
         username: null,
-        password: null,
+        password: null
       },
       rules: {
         username: [
@@ -69,36 +69,39 @@ export default {
     };
   },
   mounted() {
-    let me = this
-      this.$axios.defaults.withCredentials=true;
-      this.$axios.get("http://127.0.0.1:8000/users/status").then(function(response) {
-        if(response.data.status == 1){
-          alert("您已登录，正在为您跳转到主页")
-          me.$router.push('/')
+    let me = this;
+    this.$axios.defaults.withCredentials = true;
+    this.$axios
+      .get("http://127.0.0.1:8000/users/status")
+      .then(function(response) {
+        if (response.data.status == 1) {
+          alert("您已登录，正在为您跳转到主页");
+          me.$router.push("/");
         }
       });
   },
-  
+
   methods: {
     handle_submit() {
-      let me = this
+      let me = this;
       let postData = qs.stringify({
         username: this.form.username,
-        password: this.form.password,
+        password: this.form.password
       });
-      this.$axios.defaults.withCredentials=true;
-      this.$axios.post("http://127.0.0.1:8000/users/login",postData)
+      this.$axios.defaults.withCredentials = true;
+      this.$axios
+        .post("http://127.0.0.1:8000/users/login", postData)
         .then(function(response) {
           console.log(response);
           console.log(response.status);
           console.log(response.statusText);
           console.log(response.headers);
           console.log(response.config);
-          if(response.data.success){
-            me.$router.push('/')
-            location.reload()
-          }else{
-            alert(response.data.msg)
+          if (response.data.success) {
+            me.$router.push("/");
+            location.reload();
+          } else {
+            alert(response.data.msg);
           }
         });
     }
@@ -107,12 +110,6 @@ export default {
 </script>
 
 <style scoped>
-.Login {
-  background-image: url("../../assets/image_repo/background.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .card_style {
   width: 85%;
   border-radius: 5%;
