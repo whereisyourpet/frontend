@@ -71,8 +71,8 @@ export default {
             me.$axios.defaults.withCredentials = true;
             me.$axios(setting).then(function(response) {
               me.nickname = response.data.nickname;
-              
-              if (response.data.willing == false) {
+              console.log(response.data.location);
+              if (response.data.location == "") {
                 alert("请完善个人信息");
                 me.$router.push("basic");
               }
