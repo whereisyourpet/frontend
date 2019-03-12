@@ -1,5 +1,5 @@
 <template>
-  <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+  <div id="myChart" :style="{width: '600px', height: '450px'}"></div>
 </template>
 
 <script>
@@ -24,17 +24,36 @@ export default {
           text: "动物种类与受欢迎程度的关系"
         },
         tooltip: {},
+        color: "	#7AC5CD",
         legend: {
           data: [""]
         },
         xAxis: {
-          data: ["狗", "猫"]
+          
+          data: ["狗", "猫"],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }
         },
-        yAxis: { min: 0.5 },
+        yAxis: {
+          min: 0.5,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }
+        },
         series: [
           {
             name: "受欢迎程度",
             type: "bar",
+            barWidth: 130,
             data: [0.970733, 0.794636]
           }
         ]

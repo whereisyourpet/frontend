@@ -1,5 +1,5 @@
 <template>
-  <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+  <div id="myChart" :style="{width: '600px', height: '450px'}"></div>
 </template>
 
 <script>
@@ -24,13 +24,28 @@ export default {
           text: "动物成熟体长与受欢迎程度的关系"
         },
         tooltip: {},
+        color:	'	#7AC5CD',
         legend: {
           data: [""]
         },
         xAxis: {
-          data: ["小型", "中型", "大型", "超大型"]
+          data: ["小型", "中型", "大型", "超大型"],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          }
         },
-        yAxis: { min: 0.5 },
+        yAxis: { min: 0.5,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "20"
+            }
+          } },
         series: [
           {
             name: "受欢迎程度",
