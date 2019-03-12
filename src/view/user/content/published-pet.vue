@@ -10,7 +10,9 @@
                   <a @click="$router.push('/Pet/'+publishedPet.id)" style="text-decoration: none">宠物名称：{{ publishedPet.name }}</a>
                 </div>
                 <div class="published-pet-time word-style" style="font-size: x-large; ">
-                  发布人：{{publishedPet.name}}
+                  是否被领养：
+                  <!--下面判断 是否领养人为空-->
+                  <!--{{publishedPet.name}}-->
                 </div>
               </el-main>
             </el-container>
