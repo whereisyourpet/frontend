@@ -68,6 +68,16 @@ export default {
       }
     };
   },
+  mounted() {
+    let me = this
+      this.$axios.defaults.withCredentials=true;
+      this.$axios.get("http://127.0.0.1:8000/users/status").then(function(response) {
+        if(response.data.status == 1){
+          alert("您已登录，正在为您跳转到主页")
+          me.$router.push('/')
+        }
+      });
+  },
   
   methods: {
     handle_submit() {

@@ -25,6 +25,7 @@
 
     export default {
       name: "menuMap",
+
       data() {
         return {
           componentName: 'Basic',
@@ -49,6 +50,11 @@
               break
           }
         }
+      },
+
+      mounted() {
+        console.log(111);
+        this.componentName = 'UserInfo'
       },
       components:{
         UserInfo,

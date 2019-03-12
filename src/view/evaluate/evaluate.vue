@@ -251,6 +251,7 @@
 </template>
 
 <script>
+import qs from 'qs'
 export default {
   name: "evaluate",
   methods: {
@@ -266,16 +267,20 @@ export default {
         secondary_breed: this.data.secondary_breed,
         primary_color: this.data.primary_color,
         secondary_color1: this.data.secondary_color1,
-        psecondary_color2: this.data.psecondary_color2,
+        secondary_color2: this.data.secondary_color2,
         maturity_size: this.data.maturity_size,
         state: this.data.state,
+        fur_length:this.data.fur_length,
         dewormed: this.data.dewormed,
         sterilized: this.data.sterilized,
         vaccinated: this.data.vaccinated,
         fee: this.data.fee,
-        video_amt: this.data.video_amt,
-        photo_amt: this.data.photo_amt,
+        video_amt: '1',
+        photo_amt: '1',
+        health: this.data.health,
         description: this.data.description,
+        quantity: this.data.quantity
+
       });
       console.log(postData);
 
