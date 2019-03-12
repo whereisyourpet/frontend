@@ -1,6 +1,5 @@
 <template>
-  <div class="body">
-    <div style="height:10px"></div>
+  <div>
     <el-card class="img-block">
       <div>
         <a href="index.vue">
@@ -20,7 +19,6 @@
         </a>
       </div>
     </el-card>
-    <div style="height:9px"></div>
   </div>
 </template>   
 
@@ -31,12 +29,13 @@ export default {
 </script>
 
 <style scoped>
-.body {
+/* .body {
   background-image: url("../../assets/image_repo/background.jpg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
+} */
+
 .img-block {
   width: 18%;
   height: 40%;

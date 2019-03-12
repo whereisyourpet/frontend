@@ -25,7 +25,11 @@
         @click="handle_logout()"
         style="float: right"
       >登出</el-menu-item>
-      <el-menu-item v-if="this.islogged" @click="$router.push('/basic')" style="float: right">欢迎您，{{this.nickname}}</el-menu-item>
+      <el-menu-item
+        v-if="this.islogged"
+        @click="$router.push('/basic')"
+        style="float: right"
+      >欢迎您，{{this.nickname}}</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -73,19 +77,19 @@ export default {
       });
   },
   methods: {
-    handle_logout(){
-      let me = this
+    handle_logout() {
+      let me = this;
       this.$axios
-      .get("http://127.0.0.1:8000/users/logout")
-      .then(function(response){
-        if(response.data.success){
-          alert("注销成功")
-          me.$router.push('/')
-          location.reload()
-        }
-      });
-    },
-  },
+        .get("http://127.0.0.1:8000/users/logout")
+        .then(function(response) {
+          if (response.data.success) {
+            alert("注销成功");
+            me.$router.push("/");
+            location.reload();
+          }
+        });
+    }
+  }
 
   /*
 ################################################################################
@@ -121,6 +125,6 @@ export default {
 <style scoped>
 .navbar {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 0;
 }
 </style>
