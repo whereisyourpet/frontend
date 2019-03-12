@@ -52,7 +52,7 @@
             </el-form-item>
 
 
-            <el-form-item prop = "phone" label="联系电话">
+            <el-form-item prop = "phone" label="联系电话" >
               <el-input v-model="data.phone" style="width:217px"></el-input>
             </el-form-item>
 
