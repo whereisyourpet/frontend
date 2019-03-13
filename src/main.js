@@ -6,6 +6,7 @@ import router from './router'
 import Vuex from 'vuex'
 import store from "./store/index";
 import echarts from 'echarts'
+import 'echarts-gl'; 
 
 import AmCharts from 'amcharts3'
 import AmSerial from 'amcharts3/amcharts/serial'

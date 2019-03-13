@@ -1,20 +1,39 @@
 <template>
   <div>
-
-<el-menu mode="horizontal"
+    <el-menu
+      mode="horizontal"
       class="el-menu-vertical-demo personal-sidenav"
-      @select="change_component" style="margin-top: 50px;">
-      <el-menu-item index="type" ><el-button type="primary" round>种类</el-button></el-menu-item>
-      <el-menu-item index="gender" ><el-button type="primary" round >性别</el-button></el-menu-item>
-      <el-menu-item index="MaturitySize" ><el-button type="primary" round >体型</el-button></el-menu-item>
-      <el-menu-item index="FurLength" ><el-button type="primary" round >毛长</el-button></el-menu-item>
-      <el-menu-item index="Dewormed" ><el-button type="primary" round >驱虫</el-button></el-menu-item>
-      <el-menu-item index="Vaccinated" ><el-button type="primary" round >疫苗</el-button></el-menu-item>
-      <el-menu-item index="Quantity" ><el-button type="primary" round >数量</el-button></el-menu-item>
-
-      
-     
-</el-menu>
+      @select="change_component"
+      style="margin-top: 50px;"
+    >
+      <el-menu-item index="type">
+        <el-button type="primary" round>种类</el-button>
+      </el-menu-item>
+      <el-menu-item index="gender">
+        <el-button type="primary" round>性别</el-button>
+      </el-menu-item>
+      <el-menu-item index="MaturitySize">
+        <el-button type="primary" round>体型</el-button>
+      </el-menu-item>
+      <el-menu-item index="FurLength">
+        <el-button type="primary" round>毛长</el-button>
+      </el-menu-item>
+      <el-menu-item index="Dewormed">
+        <el-button type="primary" round>驱虫</el-button>
+      </el-menu-item>
+      <el-menu-item index="Vaccinated">
+        <el-button type="primary" round>疫苗</el-button>
+      </el-menu-item>
+      <el-menu-item index="Quantity">
+        <el-button type="primary" round>数量</el-button>
+      </el-menu-item>
+      <el-menu-item index="type_gender">
+        <el-button type="primary" round>种类&性别</el-button>
+      </el-menu-item>
+      <el-menu-item index="type_furlength">
+        <el-button type="primary" round>种类&毛长</el-button>
+      </el-menu-item>
+    </el-menu>
 
     <el-main class="personal-content" style="margin-left:100px;margin-top: 20px;">
       <component :is="componentName"></component>
@@ -30,6 +49,8 @@ import Quantity from "../content/like/Quantity";
 import Vaccinated from "../content/like/Vaccinated";
 import Dewormed from "../content/like/Dewormed";
 import FurLength from "../content/like/FurLength";
+import type_furlength from "../content/like/type_furlength";
+import type_gender from "../content/like/type_gender";
 import { mapState } from "vuex";
 
 export default {
@@ -69,6 +90,12 @@ export default {
         case "FurLength":
           this.componentName = "FurLength";
           break;
+        case "type_furlength":
+          this.componentName = "type_furlength";
+          break;
+        case "type_gender":
+          this.componentName = "type_gender";
+          break;
 
         default:
           break;
@@ -76,8 +103,8 @@ export default {
     }
   },
   mounted() {
-        this.componentName = 'type'
-      },
+    this.componentName = "type";
+  },
   components: {
     type,
     gender,
@@ -85,7 +112,9 @@ export default {
     Quantity,
     Vaccinated,
     Dewormed,
-    FurLength
+    FurLength,
+    type_furlength,
+    type_gender
   }
 };
 </script>
