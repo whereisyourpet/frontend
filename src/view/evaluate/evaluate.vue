@@ -8,7 +8,7 @@
           <div style="height:15px">
             <el-form-item>
               <span slot="label">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span>
-              <el-input v-model="data.pet_name" type="text" placeholde style="width:217px"></el-input>
+              <el-input v-model="data.pet_name" type="text"></el-input>
             </el-form-item>
 
             <el-form-item required>
@@ -38,12 +38,7 @@
 
             <el-form-item required>
               <span slot="label">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
-              <el-input
-                v-model="data.pet_age"
-                type="text"
-                placeholder="请输入年龄（单位为月份）"
-                style="width:217px"
-              ></el-input>
+              <el-input v-model="data.pet_age" type="text" placeholder="请输入年龄（单位为月份）"></el-input>
             </el-form-item>
 
             <el-form-item label="主要血统" required>
@@ -184,12 +179,12 @@
 
           <el-form-item>
             <span slot="label">领养数量</span>
-            <el-input v-model="data.quantity" type="text" placeholde style="width:217px"></el-input>
+            <el-input v-model="data.quantity" type="text"></el-input>
           </el-form-item>
 
           <el-form-item>
             <span slot="label">领养费用</span>
-            <el-input v-model="data.fee" type="text" placeholde style="width:217px"></el-input>
+            <el-input v-model="data.fee" type="text"></el-input>
           </el-form-item>
 
           <el-form-item label="动物图片">

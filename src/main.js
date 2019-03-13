@@ -7,11 +7,6 @@ import Vuex from 'vuex'
 import store from "./store/index";
 import echarts from 'echarts'
 
-import AmCharts from 'amcharts3';
-import AmSerial from 'amcharts3/amcharts/serial';
-import AmPieChart from 'amcharts3/amcharts/pie';
-
-
 import qs from 'qs'
 
 import axios from 'axios' //引入axios

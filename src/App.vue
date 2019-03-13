@@ -7,7 +7,7 @@
       <el-main>
         <router-view></router-view>
       </el-main>
-      <el-footer width="100%" style="background:rgba(246, 248, 236, 0.7)">
+      <el-footer>
         <Footer></Footer>
       </el-footer>
     </el-container>
@@ -59,6 +59,8 @@ export default {
   bottom: 0px;
   width: 100%;
   z-index: 1010;
+  height: 40px;
+  background: rgba(246, 248, 236, 0.7);
 }
 
 body {

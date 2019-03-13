@@ -3,11 +3,9 @@
     <el-container class="background">
       <el-card class="form-style">
         <el-form label-width="100px">
-          <div style="height:15px"></div>
           <h2 style="text-align: center">添加你的喜欢参数</h2>
-          <div style="height:15px"></div>
           <el-form-item label="领养费用">
-            <el-input v-model="data.fee" type="text" placeholder="货币单位MYR" style="width:217px"></el-input>
+            <el-input v-model="data.fee" type="text" placeholder="货币单位MYR"></el-input>
           </el-form-item>
 
           <el-form-item>
@@ -37,12 +35,7 @@
 
           <el-form-item>
             <span slot="label">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
-            <el-input
-              v-model="data.pet_age"
-              type="text"
-              placeholder="请输入年龄（单位为月份）"
-              style="width:217px"
-            ></el-input>
+            <el-input v-model="data.pet_age" type="text" placeholder="请输入年龄（单位为月份）"></el-input>
           </el-form-item>
 
           <el-form-item label="主要血统">
@@ -1042,7 +1035,7 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url("../../assets/image_repo/background-golden.jpg");
+  background-image: url("../../assets/image_repo/background-white-lie.jpeg");
 }
 
 .form-style {
