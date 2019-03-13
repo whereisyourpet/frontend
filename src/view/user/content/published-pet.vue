@@ -1,20 +1,20 @@
 <template>
   <div class="published-pet-list">
     <div class="published-pet-card" v-for="pet in pets_list" :key="pet.pet_id">
-      <div @click="$router.push('/Pet/'+pet.id)">
+      <div @click="">
         <el-card class="published-pet-card">
           <el-container>
             <el-main class="published-pet-info-right">
               <div>
                 <div class="published-pet-title word-style" style="font-size: xx-large; ">
                   <a
-                    @click="$router.push('/Pet/'+pet.id)"
+                    @click=""
                     style="text-decoration: none"
                   >宠物名称:{{pet.pet_name}}</a>
                 </div>
                 <div class style="font-size: large; ">
                   <a
-                    @click="$router.push('/Pet/'+pet.id)"
+                    @click=""
                     style="text-decoration: none"
                   >救助人：{{pet.rescuer_name}}</a>
                 </div>
