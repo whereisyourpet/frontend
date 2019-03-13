@@ -171,11 +171,11 @@
             </el-select>
           </el-form-item>
 
-          <el-row>
+          <div>
             <el-col :span="6" :offset="9">
               <el-button type="primary" id="submit_button" @click="handle_find()">提交</el-button>
             </el-col>
-          </el-row>
+          </div>
         </el-form>
       </el-card>
     </el-container>
@@ -1053,5 +1053,6 @@ export default {
 
 #submit_button {
   width: 100%;
+  margin-bottom: 20px;
 }
 </style>
