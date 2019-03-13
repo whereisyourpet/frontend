@@ -3,31 +3,30 @@
     <!--<el-menu :default-active="activeIndex" mode="horizontal">-->
     <!--<el-menu :default-active="activeIndex" mode="horizontal">-->
     <el-menu mode="horizontal" style="background:rgba(246, 248, 236, 0.7)">
-      <el-menu-item index="home" @click="$router.push('/')"><img class="logo" src="../assets/image_repo/logo.png"></el-menu-item>
       <el-menu-item index="home" @click="$router.push('/')">主页</el-menu-item>
       <el-menu-item index="activity" @click="$router.push('/menu')">数据分析</el-menu-item>
       <el-menu-item index="resource" @click="$router.push('/evaluate')">萌宠寻主</el-menu-item>
       <el-menu-item index="forum" @click="$router.push('/find')">猜你喜欢</el-menu-item>
       <el-menu-item
-        v-if="!this.islogged"
+        v-if="!this.isLogged"
         index="register"
         @click="$router.push('/register')"
         style="float: right"
       >注册</el-menu-item>
       <el-menu-item
-        v-if="!this.islogged"
+        v-if="!this.isLogged"
         index="log"
         @click="$router.push('/login')"
         style="float: right"
       >登录</el-menu-item>
       <el-menu-item
-        v-if="this.islogged"
+        v-if="this.isLogged"
         index="logout"
         @click="handle_logout()"
         style="float: right"
       >登出</el-menu-item>
       <el-menu-item
-        v-if="this.islogged"
+        v-if="this.isLogged"
         @click="$router.push('/basic')"
         style="float: right"
       >欢迎您，{{this.nickname}}</el-menu-item>
@@ -48,7 +47,7 @@ export default {
   name: "navbar",
   data() {
     return {
-      islogged: false,
+      isLogged: false,
       nickname: "",
       activateIndex: "1"
     };
@@ -58,10 +57,9 @@ export default {
     this.$axios
       .get("http://127.0.0.1:8000/users/status")
       .then(function(response) {
-        console.log(response.data.status == "1");
         if (response.data.status == "1") {
-          me.islogged = true;
-          if (me.islogged) {
+          me.isLogged = true;
+          if (me.isLogged) {
             let setting = {
               method: "GET",
               url: "http://127.0.0.1:8000/users/get_user_info",
@@ -72,7 +70,7 @@ export default {
             me.$axios.defaults.withCredentials = true;
             me.$axios(setting).then(function(response) {
               me.nickname = response.data.nickname;
-              console.log(response.data.location);
+
               if (response.data.location == "") {
                 me.$alert('请先完善个人信息', '欢迎使用', {
                 confirmButtonText: '确定',
@@ -100,8 +98,8 @@ export default {
 
             me.$router.push("/");
             location.reload();
-                      if (response.data.success) {
-                    me.$message({
+          if (response.data.success) {
+          me.$message({
           message: '注销成功',
           type: 'success'
         });
@@ -146,10 +144,4 @@ export default {
   width: 100%;
   margin: 0;
 }
-.logo{
-  width:175px;
-  height:175px;
-  margin-top: -60px;
-  left: 10px;
- }
 </style>

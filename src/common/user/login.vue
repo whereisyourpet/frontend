@@ -46,7 +46,6 @@
 
 <script>
 import qs from "qs";
-
 export default {
   name: "login",
 
@@ -56,6 +55,7 @@ export default {
         username: "",
         password: ""
       },
+      isLogged: this.GLOBAL.isLogged,
       rules: {
         username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
@@ -87,7 +87,7 @@ export default {
         this.$notify.info({
           title: "提示",
           message: "请输入用户名",
-          offset:52
+          offset: 52
         });
         return;
       }
@@ -95,7 +95,7 @@ export default {
         this.$notify.info({
           title: "提示",
           message: "请输入密码",
-          offset:52
+          offset: 52
         });
         return;
       }
@@ -109,18 +109,16 @@ export default {
       this.$axios
         .post("http://127.0.0.1:8000/users/login", postData)
         .then(function(response) {
-          console.log(response);
-          console.log(response.status);
-          console.log(response.statusText);
-          console.log(response.headers);
-          console.log(response.config);
+          // console.log(response);
+          // console.log(response.status);
+          // console.log(response.statusText);
+          // console.log(response.headers);
+          // console.log(response.config);
           if (response.data.success) {
-            me.$message({
-              message: "登录成功，正在跳转到主页",
-              type: "success",
-              center: true
-            });
             me.$router.push("/");
+            location.reload()
+
+                       
           } else {
             me.$notify.error({
               title: "错误",
