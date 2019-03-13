@@ -163,7 +163,7 @@ export default {
     };
     this.$axios.defaults.withCredentials = true;
     this.$axios(setting).then(response => {
-      console.log(response);
+      // console.log(response);
 
       me.data.username = response.data.username;
       me.data.email = response.data.email;

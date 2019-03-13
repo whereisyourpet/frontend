@@ -30,6 +30,7 @@ import echarts from '@/common/echarts/test.vue'
 
 //pet
 import selectPet from '@/view/pet/select-pet'
+import petInfo from '@/view/pet/published-pets-info'
 
 export default new Router({
   routes: [
@@ -82,6 +83,11 @@ export default new Router({
       path : '/selectPet',
       name : 'selectPet',
       component : selectPet
+    },
+    {
+      path : '/pet/:petId',
+      name : 'petInfo',
+      component : petInfo
     },
 
   ]
