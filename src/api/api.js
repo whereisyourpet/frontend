@@ -4,7 +4,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://127.0.0.1:8000'
 axios.defaults.withCredentials = true
 axios.defaults.headers = {
-  'Content-Type': 'application/x-www-form-urlencoded'
+  'Content-Type': 'applicaotion/x-www-form-urlencded'
 }
 
 

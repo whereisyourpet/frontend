@@ -1,13 +1,13 @@
 <template>
-  <div class="published-pet-list">
-    <div class="published-pet-card" v-for="pet in pets_list" :key="pet">
+  <div  class="published-pet-list">
+    <div  class="published-pet-card" v-for="pet in pets_list" :key="pet.pet_id">
         <div @click="$router.push('/Pet/'+pet.id)">
         <el-card class="published-pet-card">
           <el-container>
             <el-main class="published-pet-info-right">
               <div>
-                <div class="published-pet-title word-style" style="font-size: xx-large; ">
-                  <a @click="$router.push('/Pet/'+pet.id)" style="text-decoration: none" >宠物名称:{{pet.pet_name}}</a>
+                <div v-model=this.update class="published-pet-title word-style" style="font-size: xx-large; ">
+                  <a @click="$router.push('/Pet/'+pet.id)"  style="text-decoration: none" >宠物名称:{{pet.pet_name}}</a>
                 </div>
                 <div class="" style="font-size: large; ">
                   <a @click="$router.push('/Pet/'+pet.id)" style="text-decoration: none" >救助人：{{pet.rescuer_name}}</a>
@@ -38,6 +38,7 @@
           return {
             pet_ids:[],
             pets_list:[],
+            update:1,
           }
       },
     //  接口没定我写个捷豹写,
@@ -73,6 +74,7 @@
                 .then(function(response) {
                   console.log(response.data.data[0]);
                   me.pets_list[i] = response.data.data[0]
+                  me.update++
                   // console.log(response);
                   // console.log(response.status);
                   // console.log(response.statusText);
