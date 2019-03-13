@@ -2,7 +2,7 @@
   <div class="Login background">
     <div class="centerPage">
       <el-card align="left" class="card_style">
-        <div slot="header" class="clearfix">
+        <div slot="header" class="card-header">
           <h2>
             登录
             <i class="el-icon-caret-left"></i>
@@ -145,11 +145,14 @@ export default {
   right: 0px;
 }
 
+.card-header {
+  margin: -20px 0;
+}
+
 .card_style {
-  margin-top: 90px;
+  margin-top: 35%;
   width: 85%;
   border-radius: 5%;
-  height: 30%;
   background: rgba(255, 255, 255, 0.7);
 }
 .centerPage {

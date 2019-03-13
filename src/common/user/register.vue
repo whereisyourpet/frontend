@@ -2,16 +2,16 @@
   <div class="register background">
     <div class="centerPage">
       <el-card class="card_style">
-        <div slot="header" class="clearfix">
+        <div slot="header" class="card-header">
           <h2>
             注册
             <i class="el-icon-caret-left"></i>
             <router-link to="/login">
-              <el-button type="text" style="float: right; padding: 3px 0">登录</el-button>
+              <el-button type="text" style="float: right;">登录</el-button>
             </router-link>
           </h2>
         </div>
-        <el-form :model="form" :rules="rules" ref="form" label-width="100px">
+        <el-form :model="form" :rules="rules" ref="form" label-width="80px" label-position="left">
           <el-form-item prop="username" label="用户名">
             <el-input v-model.trim="form.username" type="text"></el-input>
           </el-form-item>
@@ -25,8 +25,10 @@
             <el-input v-model="form.password2" type="password"></el-input>
           </el-form-item>
           <!--注册按钮要不要居中？-->
-          <el-form-item label-width="143px">
-            <el-button type="primary" @click="handle_register()">注册</el-button>
+        </el-form>
+        <el-form>
+          <el-form-item>
+            <el-button type="primary" id="submit_button" @click="handle_register()">注册</el-button>
           </el-form-item>
         </el-form>
       </el-card>
@@ -171,14 +173,22 @@ export default {
   right: 0px;
 }
 
+.card-header {
+  margin: -20px 0;
+}
+
 .centerPage {
   margin-left: 65%;
 }
 .card_style {
-  margin-top: 60px;
+  margin-top: 35%;
   width: 85%;
   border-radius: 5%;
-  height: 30%;
   background: rgba(255, 255, 255, 0.7);
+}
+
+#submit_button {
+  width: 100%;
+  display: block;
 }
 </style>
