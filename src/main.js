@@ -10,6 +10,8 @@ import echarts from 'echarts'
 import AmCharts from 'amcharts3'
 import AmSerial from 'amcharts3/amcharts/serial'
 
+import Global from '@/network/Global.js'
+Vue.prototype.Global = Global
 import qs from 'qs'
 
 import axios from 'axios' //引入axios
