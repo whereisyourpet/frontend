@@ -100,7 +100,13 @@ export default {
         pet_gender: this.pet_gender,
         primary_color: this.primary_color,
         state: this.state,
-        upquantity: this.upquantity
+        upquantity: this.upquantity,
+       
+          secondary_color1:"",
+          secondary_color2:"",      
+          upfee:1000,           
+          downfee:0,
+          downquantity:0,    
       });   
       console.log(postData);
 

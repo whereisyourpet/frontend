@@ -16,6 +16,7 @@
     "amcharts3": "github:amcharts/amcharts3",
     "axios": "^0.18.0",
     "echarts": "^4.1.0",
+    "echarts-gl": "^1.1.1",
     "element-ui": "^2.5.4",
     "request": "^2.88.0",
     "vue": "^2.5.2",
