@@ -1,25 +1,23 @@
 <template>
   <el-container class="background">
     <el-row>
-      <el-col :span="22" :offset="15">
+      <el-col :span="7" :offset="15">
         <el-card class="img-block">
-          <div>
+          <el-row>
             <a href="index.vue">
               <img class="img-button" src="../../assets/image_repo/doge_meitu_1_s.png">
             </a>
-          </div>
-          <div style="height:30px"></div>
-          <div>
+          </el-row>
+          <el-row>
             <a href="index.vue">
               <img class="img-button" src="../../assets/image_repo/doge_meitu_3_s.png">
             </a>
-          </div>
-          <div style="height:30px"></div>
-          <div>
+          </el-row>
+          <el-row>
             <a href="index.vue">
               <img class="img-button" src="../../assets/image_repo/doge_meitu_2_s.png">
             </a>
-          </div>
+          </el-row>
         </el-card>
       </el-col>
     </el-row>
@@ -33,13 +31,6 @@ export default {
 </script>
 
 <style scoped>
-/* .background {
-  background-image: url("../../assets/image_repo/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-} */
-
 .background {
   background-image: url("../../assets/image_repo/background.jpg");
   position: absolute;
@@ -49,8 +40,9 @@ export default {
 }
 
 .img-block {
-  width: 18%;
-  height: 40%;
+  width: 80%;
+  /* height: 40%; */
+  min-height: 20em;
   margin-top: 100px;
 }
 .img-button {

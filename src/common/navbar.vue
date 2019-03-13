@@ -130,6 +130,6 @@ export default {
 <style scoped>
 .navbar {
   width: 100%;
-  margin: 0 0;
+  margin: 0;
 }
 </style>
