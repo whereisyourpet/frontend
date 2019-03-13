@@ -45,7 +45,6 @@ export default {
 
       {
 					"type": "map",
-					"pathToImages": "http://www.amcharts.com/lib/3/images/",
 					"addClassNames": true,
 					"fontSize": 15,
 					"color": "#FFFFFF",
@@ -54,16 +53,12 @@ export default {
 					"backgroundColor": "rgba(80,80,80,1)",
 					"dataProvider": {
 						"map": "malaysiaLow",
-						"getAreasFromMap": true,
 						"images": [
 							{
 								"top": 40,
 								"left": 60,
 								"width": 80,
 								"height": 40,
-								"pixelMapperLogo": true,
-								"imageURL": "http://pixelmap.amcharts.com/static/img/logo.svg",
-								"url": "http://www.amcharts.com"
 							}
 						],
 						"areas": [
