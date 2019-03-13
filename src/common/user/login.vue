@@ -53,8 +53,8 @@ export default {
   data() {
     return {
       form: {
-        username: null,
-        password: null
+        username: "",
+        password: ""
       },
       rules: {
         username: [
@@ -83,6 +83,23 @@ export default {
 
   methods: {
     handle_submit() {
+      if (this.form.username.length == 0) {
+        this.$notify.info({
+          title: "提示",
+          message: "请输入用户名",
+          offset:52
+        });
+        return;
+      }
+      if (this.form.password.length == 0) {
+        this.$notify.info({
+          title: "提示",
+          message: "请输入密码",
+          offset:52
+        });
+        return;
+      }
+
       let me = this;
       let postData = qs.stringify({
         username: this.form.username,
@@ -98,10 +115,18 @@ export default {
           console.log(response.headers);
           console.log(response.config);
           if (response.data.success) {
+            me.$message({
+              message: "登录成功，正在跳转到主页",
+              type: "success",
+              center: true
+            });
             me.$router.push("/");
-            location.reload();
           } else {
-            alert(response.data.msg);
+            me.$notify.error({
+              title: "错误",
+              message: response.data.msg,
+              offset: 52
+            });
           }
         });
     }
