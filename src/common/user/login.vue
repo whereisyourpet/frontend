@@ -74,17 +74,16 @@ export default {
       .get("http://127.0.0.1:8000/users/status")
       .then(function(response) {
         if (response.data.status == 1) {
+          me.$alert("您已经登录，为您跳转到主页", "提示", {
+            confirmButtonText: "确定",
+            callback: action => {
+              me.$message({
+                message: "跳转成功",
+                type: "success"
+              });
+            }
+          });
 
-          me.$alert('您已经登录，为您跳转到主页', '提示', {
-          confirmButtonText: '确定',
-          callback: action => {
-            me.$message({
-          message: '跳转成功',
-          type: 'success'
-        });
-          }
-        });
-                  
           me.$router.push("/");
         }
       });
@@ -125,9 +124,7 @@ export default {
           // console.log(response.config);
           if (response.data.success) {
             me.$router.push("/");
-            location.reload()
-
-                       
+            location.reload();
           } else {
             me.$notify.error({
               title: "错误",
@@ -144,10 +141,11 @@ export default {
 <style scoped>
 .background {
   background-image: url("../../assets/image_repo/background-white-lie.jpeg");
-  position: absolute;
+  position: fixed;
   top: 60px;
   bottom: 0px;
   left: 0px;
+  right: 0px;
 }
 
 .card_style {
