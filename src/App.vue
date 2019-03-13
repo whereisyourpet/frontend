@@ -44,12 +44,9 @@ export default {
   background-attachment: fixed;
 }
 
-.el-main {
-  padding: 0;
-}
-
 .el-header,
-.el-footer {
+.el-footer,
+.el-main {
   padding: 0%;
 }
 
