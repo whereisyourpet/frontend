@@ -34,6 +34,7 @@ import petInfo from '@/view/pet/published-pets-info'
 
 import find_pet from '@/view/find/find-pet'
 
+import evaluate_pet from '@/view/evaluate/evaluate_result'
 export default new Router({
   routes: [
     {
@@ -95,6 +96,11 @@ export default new Router({
       path : '/find_pet',
       name : 'find_pet',
       component : find_pet
+    },
+    {
+      path : '/evaluate_pet',
+      name : 'evaluate_pet',
+      component : evaluate_pet
     },
 
   ]

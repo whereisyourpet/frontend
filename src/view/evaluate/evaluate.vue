@@ -271,13 +271,14 @@ export default {
         photo_amt: 1,
         health: this.data.health,
         description: this.data.description,
-        quantity: this.data.quantity
+        quantity: this.data.quantity,
+        k:10
       });
       console.log(postData);
 
       this.$axios.defaults.withCredentials = true;
       this.$axios
-        .post("http://127.0.0.1:8000/pets/publish_pet_information", postData)
+        .post("http://127.0.0.1:8000/pets/starpredictor", postData)
         .then(function(response) {
           console.log(response);
           console.log(response.status);
@@ -286,7 +287,13 @@ export default {
           console.log(response.config);
           if (response.data.success) {
             console.log(response);
-            // me.$router.push('/find-pet')
+            console.log(response.data.predict_adoption_star)
+            console.log(response.data.predict_popularity_star)
+            me.Global.set_adoption(response.data.predict_adoption_star)
+            me.Global.set_popularity(response.data.predict_popularity_star)
+            console.log(me.Global.predict_adoption_star);
+            
+            me.$router.push('/evaluate_pet')
             location.reload();
           } else {
             alert(response.data.msg);
