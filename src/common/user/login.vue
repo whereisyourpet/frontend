@@ -55,7 +55,6 @@ export default {
         username: "",
         password: ""
       },
-      isLogged: this.GLOBAL.isLogged,
       rules: {
         username: [
           { required: true, message: "请输入用户名", trigger: "blur" },
