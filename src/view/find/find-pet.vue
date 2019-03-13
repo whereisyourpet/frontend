@@ -17,7 +17,7 @@
                   >宠物名称:{{pet.pet_name}}</a>
                 </div>
                 <br>
-                
+
                 <div class style="font-size: large; ">
                   <a
                     @click="$router.push('/Pet/'+pet.id)"
@@ -32,8 +32,8 @@
                     style="text-decoration: none"
                   >救助人：{{pet.rescuer_name}}</a>&nbsp;&nbsp;&nbsp;
                 </div>
-              </div> 
-            </el-main>  
+              </div>
+            </el-main>
           </el-container>
         </el-card>
       </div>
@@ -57,6 +57,7 @@ export default {
   mounted() {
     let me = this;
     console.log(me.Global.find_data)
+    console.log(11)
   },
   //  接口没定我写个捷豹写,
   // 现在有了，我开始写捷豹
