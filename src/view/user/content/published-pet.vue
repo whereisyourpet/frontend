@@ -115,6 +115,7 @@ export default {
 }
 .published-pet-card {
   height: 30%;
+  margin-bottom: 10px;
 }
 .word-style {
   padding-left: 3%;
