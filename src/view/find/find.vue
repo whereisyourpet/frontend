@@ -214,14 +214,20 @@ export default {
       this.$axios
         .post("http://127.0.0.1:8000/pets/get_recommand_pets", postData)
         .then(function(response) {
-          console.log(response);
-          console.log(response.status);
-          console.log(response.statusText);
-          console.log(response.headers);
-          console.log(response.config);
+          // console.log(response);
+          // console.log(response.status);
+          // console.log(response.statusText);
+          // console.log(response.headers);
+          // console.log(response.config);
           if (response.data.success) {
-            console.log(response);
-            me.$router.push("/find-pet");
+            console.log(response.data.data);
+            me.pets_list=response.data.data;
+            me.Global.set_find_data(response.data.data);
+            console.log("保护");
+            
+            console.log(me.Global.find_data);
+            console.log("保护");
+            me.$router.push("/find_pet");
             // location.reload();
           } else {
             alert(response.data.msg);
@@ -232,6 +238,7 @@ export default {
   data() {
     return {
       data: {
+        pets_list:[],
         fee: 0,
         pet_type: "",
         pet_type_option: [

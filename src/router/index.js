@@ -32,6 +32,8 @@ import echarts from '@/common/echarts/test.vue'
 import selectPet from '@/view/pet/select-pet'
 import petInfo from '@/view/pet/published-pets-info'
 
+import find_pet from '@/view/find/find-pet'
+
 export default new Router({
   routes: [
     {
@@ -88,6 +90,11 @@ export default new Router({
       path : '/pet/:petId',
       name : 'petInfo',
       component : petInfo
+    },
+    {
+      path : '/find_pet',
+      name : 'find_pet',
+      component : find_pet
     },
 
   ]
