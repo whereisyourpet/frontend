@@ -232,7 +232,7 @@
 
           <div>
             <el-col :span="6" :offset="9">
-              <el-button type="primary" id="submit_button" @click="handle_evaluate()">提交</el-button>
+              <el-button type="primary" id="submit_button" @click="handle_evaluate(),submit_publish()">提交</el-button>
             </el-col>
           </div>
         </el-form>
@@ -285,7 +285,7 @@ export default {
           console.log(response.statusText);
           console.log(response.headers);
           console.log(response.config);
-          me.submit_publish()
+          // me.submit_publish()
           if (response.data.success) {
             console.log(response);
             console.log(response.data.predict_adoption_star)
@@ -295,7 +295,7 @@ export default {
             console.log(me.Global.predict_adoption_star);
 
             me.$router.push('/evaluate_pet')
-            location.reload();
+            // location.reload();
           } else {
             alert(response.data.msg);
           }
@@ -304,11 +304,34 @@ export default {
 
     submit_publish(){
       let me = this;
+      let postData = qs.stringify({
+        pet_name: this.data.pet_name,
+        pet_type: this.data.pet_type,
+        pet_age: this.data.pet_age,
+        pet_gender: this.data.pet_gender,
+        primary_breed: this.data.primary_breed,
+        secondary_breed: this.data.secondary_breed,
+        primary_color: this.data.primary_color,
+        secondary_color1: this.data.secondary_color1,
+        secondary_color2: this.data.secondary_color2,
+        maturity_size: this.data.maturity_size,
+        state: this.data.state,
+        fur_length: this.data.fur_length,
+        dewormed: this.data.dewormed,
+        sterilized: this.data.sterilized,
+        vaccinated: this.data.vaccinated,
+        fee: this.data.fee,
+        video_amt: 1,
+        photo_amt: 1,
+        health: this.data.health,
+        description: this.data.description,
+        quantity: this.data.quantity,
+      });
       this.$axios.defaults.withCredentials = true;
       this.$axios
-        .post("http://127.0.0.1:8000/pets/publish_pet_information")
+        .post("http://127.0.0.1:8000/pets/publish_pet_information",postData)
         .then(function(response) {
-
+          console.log(123)
           if (response.data.success) {
           } else {
             alert(response.data.msg);
