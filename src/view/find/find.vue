@@ -1042,7 +1042,7 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url("../../assets/image_repo/background-golden.jpg");
+  background-image: url("../../assets/image_repo/background-white-lie.jpeg");
 }
 
 .form-style {

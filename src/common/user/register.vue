@@ -101,7 +101,7 @@ export default {
       if (this.form.username.length == 0) {
         this.$notify.info({
           title: "提示",
-          message: "请输入用户名",
+          message: "请输入用户名"
         });
         return;
       }
@@ -109,7 +109,7 @@ export default {
       if (this.form.nickname.length == 0) {
         this.$notify.info({
           title: "提示",
-          message: "请输入昵称",
+          message: "请输入昵称"
         });
         return;
       }
@@ -117,14 +117,14 @@ export default {
       if (this.form.password.length < 6) {
         this.$notify.info({
           title: "提示",
-          message: "密码长度应在6-18位",
+          message: "密码长度应在6-18位"
         });
         return;
       }
       if (this.form.password !== this.form.password2) {
         this.$notify.info({
           title: "提示",
-          message: "两次密码不一致",
+          message: "两次密码不一致"
         });
         return;
       }
@@ -145,13 +145,13 @@ export default {
           // console.log(response.config);
           if (response.data.success) {
             me.$message({
-          message: "注册成功，请登录",
-          type: 'success',
-          center: true
-        })
+              message: "注册成功，请登录",
+              type: "success",
+              center: true
+            });
             me.$router.push("/login");
           } else {
-            me.form.username=""
+            me.form.username = "";
             me.$notify.error({
               title: "错误",
               message: response.data.msg
@@ -165,7 +165,7 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url("../../assets/image_repo/background.jpg");
+  background-image: url("../../assets/image_repo/background-lip.jpeg");
   position: absolute;
   top: 60px;
   bottom: 0px;
