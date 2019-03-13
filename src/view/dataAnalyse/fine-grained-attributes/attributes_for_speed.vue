@@ -34,7 +34,7 @@ import location from "../content/speed/location";
 import { mapState } from "vuex";
 
 export default {
-  name: "attributes_for_like",
+  name: "attributes_for_speed",
   data() {
     return {
       componentName: ""
@@ -70,9 +70,9 @@ export default {
         case "FurLength":
           this.componentName = "FurLength";
           break;
-          case "location":
+        case "location":
           this.componentName = "location";
-          break;
+        break;
 
         default:
           break;
