@@ -1,7 +1,6 @@
 <template>
   <div class="register background">
     <div class="centerPage">
-      <div style="height:30px"></div>
       <el-card class="card_style">
         <div slot="header" class="clearfix">
           <h2>
@@ -31,7 +30,6 @@
           </el-form-item>
         </el-form>
       </el-card>
-      <div style="height:30px"></div>
     </div>
   </div>
 </template>
@@ -177,6 +175,7 @@ export default {
   margin-left: 65%;
 }
 .card_style {
+  margin-top: 60px;
   width: 85%;
   border-radius: 5%;
   height: 30%;
