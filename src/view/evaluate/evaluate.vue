@@ -10,7 +10,6 @@
               <span slot="label">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span>
               <el-input v-model="data.pet_name" type="text"></el-input>
             </el-form-item>
-
             <el-form-item required>
               <span slot="label">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
               <el-select v-model="data.pet_type" placeholder="请选择">
