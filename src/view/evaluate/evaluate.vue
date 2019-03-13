@@ -1125,6 +1125,6 @@ export default {
 }
 
 .el-input {
-  max-width: 197px;
+  max-width: 194px;
 }
 </style>
