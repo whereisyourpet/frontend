@@ -75,12 +75,12 @@ export default {
       .then(function(response) {
         if (response.data.status == 1) {
 
-          me.$alert('这是一段内容', '标题名称', {
+          me.$alert('您已经登录，为您跳转到主页', '提示', {
           confirmButtonText: '确定',
           callback: action => {
             me.$message({
-          message: '您已经登录，为您跳转到主页',
-          type: 'warning'
+          message: '跳转成功',
+          type: 'success'
         });
           }
         });
