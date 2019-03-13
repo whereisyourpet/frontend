@@ -148,8 +148,6 @@ export default {
 }
 .logo{
   width:175px;
-  height:175px;
-  margin-top: -60px;
   left: 10px;
  }
 </style>
