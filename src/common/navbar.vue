@@ -3,6 +3,7 @@
     <!--<el-menu :default-active="activeIndex" mode="horizontal">-->
     <!--<el-menu :default-active="activeIndex" mode="horizontal">-->
     <el-menu mode="horizontal" style="background:rgba(246, 248, 236, 0.7)">
+      <el-menu-item index="home" @click="$router.push('/')"><img class="logo" src="../assets/image_repo/logo.png"></el-menu-item>
       <el-menu-item index="home" @click="$router.push('/')">主页</el-menu-item>
       <el-menu-item index="activity" @click="$router.push('/menu')">数据分析</el-menu-item>
       <el-menu-item index="resource" @click="$router.push('/evaluate')">萌宠寻主</el-menu-item>
@@ -132,4 +133,10 @@ export default {
   width: 100%;
   margin: 0;
 }
+.logo{
+  width:175px;
+  height:175px;
+  margin-top: -60px;
+  left: 10px;
+ }
 </style>
