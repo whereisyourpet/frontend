@@ -84,7 +84,7 @@ export default {
         });
           }
         });
-                  
+
           me.$router.push("/");
         }
       });
@@ -127,7 +127,7 @@ export default {
             me.$router.push("/");
             location.reload()
 
-                       
+
           } else {
             me.$notify.error({
               title: "错误",
