@@ -33,13 +33,13 @@
             <el-radio v-model="data.willing" label="2">无</el-radio>
           </el-form-item>
 
-          <el-form-item prop="number" label="收养数量" required>
-            <el-input v-model="data.number" style="width:217px"></el-input>
-          </el-form-item>
-
           <el-form-item prop="married" label="情感状况">
             <el-radio v-model="data.married" label="1">已婚</el-radio>
             <el-radio v-model="data.married" label="2">未婚</el-radio>
+          </el-form-item>
+
+          <el-form-item prop="number" label="收养数量" required>
+            <el-input v-model="data.number" style="width:217px"></el-input>
           </el-form-item>
 
           <el-form-item prop="email" label="电子邮箱">
