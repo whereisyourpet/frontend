@@ -7,6 +7,8 @@ import Vuex from 'vuex'
 import store from "./store/index";
 import echarts from 'echarts'
 
+import amcharts from 'amcharts3'
+
 import qs from 'qs'
 
 import axios from 'axios' //引入axios

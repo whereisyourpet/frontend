@@ -16,7 +16,7 @@
      
 </el-menu>
 
-    <el-main class="personal-content">
+    <el-main class="personal-content" style="margin-left:100px">
       <component :is="componentName"></component>
     </el-main>
   </div>
