@@ -40,10 +40,10 @@ export default {
 }
 
 .img-block {
-  width: 80%;
-  /* height: 40%; */
-  min-height: 20em;
-  margin-top: 100px;
+  width: 70%;
+  max-height: 80%;
+  min-height: 40%;
+  margin-top: 10%;
 }
 .img-button {
   height: 60%;
