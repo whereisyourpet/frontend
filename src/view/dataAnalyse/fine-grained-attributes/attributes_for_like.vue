@@ -3,7 +3,7 @@
 
 <el-menu mode="horizontal"
       class="el-menu-vertical-demo personal-sidenav"
-      @select="change_component">
+      @select="change_component" style="margin-top: 50px;">
       <el-menu-item index="type" ><el-button type="primary" round>种类</el-button></el-menu-item>
       <el-menu-item index="gender" ><el-button type="primary" round >性别</el-button></el-menu-item>
       <el-menu-item index="MaturitySize" ><el-button type="primary" round >体型</el-button></el-menu-item>
@@ -16,7 +16,7 @@
      
 </el-menu>
 
-    <el-main class="personal-content" style="margin-left:100px">
+    <el-main class="personal-content" style="margin-left:100px;margin-top: 20px;">
       <component :is="componentName"></component>
     </el-main>
   </div>
