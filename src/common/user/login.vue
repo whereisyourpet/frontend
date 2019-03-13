@@ -74,7 +74,17 @@ export default {
       .get("http://127.0.0.1:8000/users/status")
       .then(function(response) {
         if (response.data.status == 1) {
-          alert("您已登录，正在为您跳转到主页");
+
+          me.$alert('这是一段内容', '标题名称', {
+          confirmButtonText: '确定',
+          callback: action => {
+            me.$message({
+          message: '您已经登录，为您跳转到主页',
+          type: 'warning'
+        });
+          }
+        });
+                  
           me.$router.push("/");
         }
       });
