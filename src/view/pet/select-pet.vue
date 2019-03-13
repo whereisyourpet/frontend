@@ -78,12 +78,32 @@
 
     <!--没接口写个几把-->
     <div>
-      <el-card class="box-card">
-        <div slot="header" class="clearfix">
-          <span>卡片名称</span>
-          <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+      <div class="published-pet-list">
+        <div class="published-pet-card" v-for="pet in pets_list" :key="pet.pet_id">
+          <div @click="$router.push('/Pet/'+pet.id)">
+            <el-card class="published-pet-card">
+              <el-container>
+                <el-main class="published-pet-info-right">
+                  <div>
+                    <div class="published-pet-title word-style" style="font-size: xx-large; ">
+                      <a
+                        @click="$router.push('/Pet/'+pet.id)"
+                        style="text-decoration: none"
+                      >宠物名称:{{pet.pet_name}}</a>
+                    </div>
+                    <div class style="font-size: large; ">
+                      <a
+                        @click="$router.push('/Pet/'+pet.id)"
+                        style="text-decoration: none"
+                      >救助人：{{pet.rescuer_name}}</a>
+                    </div>
+                  </div>
+                </el-main>
+              </el-container>
+            </el-card>
+          </div>
         </div>
-      </el-card>
+      </div>
     </div>
   </div>
 </template>
@@ -101,31 +121,29 @@ export default {
         primary_color: this.primary_color,
         state: this.state,
         upquantity: this.upquantity,
-       
-          secondary_color1:"",
-          secondary_color2:"",      
-          upfee:1000,           
-          downfee:0,
-          downquantity:0,    
-      });   
-      console.log(postData);
 
-      this.$axios.defaults.withCredentials = true; 
+          secondary_color1:"",
+          secondary_color2:"",
+          upfee:1000,
+          downfee:0,
+          downquantity:0,
+      });
+
+      this.$axios.defaults.withCredentials = true;
       this.$axios
         .post("http://127.0.0.1:8000/pets/petfilter", postData)
         .then(function(response) {
-          console.log(response);
+          console.log(postData);
           if (response.data.success) {
-            console.log(response);
-            // me.$router.push('/find-pet')
-            // location.reload();
-            console.log(response.data.data);
+
+            console.log(response.data);
           } else {
             alert(response.data.success);
             console.log('失败');
           }
         });
-    }
+    },
+
   },
   data() {
     return {
@@ -134,6 +152,7 @@ export default {
       primary_color: "",
       pet_gender: "",
       state: "",
+      pets:[],
       pet_type_option: [
         {
           value: "1",
@@ -169,66 +188,22 @@ export default {
         }
       ],
       state_option: [
-        {
-          value: "1",
-          label: "Johor"
-        },
-        {
-          value: "2",
-          label: "Kedah"
-        },
-        {
-          value: "3",
-          label: "Kelantan"
-        },
-        {
-          value: "4",
-          label: "Kuala Lumpur"
-        },
-        {
-          value: "5",
-          label: "Labuan"
-        },
-        {
-          value: "6",
-          label: "Melaka"
-        },
-        {
-          value: "7",
-          label: "Negeri Sembilan"
-        },
-        {
-          value: "8",
-          label: "Pahang"
-        },
-        {
-          value: "9",
-          label: "Perak"
-        },
-        {
-          value: "10",
-          label: "Perlis"
-        },
-        {
-          value: "11",
-          label: "Pulau Pinang"
-        },
-        {
-          value: "12",
-          label: "Sabah"
-        },
-        {
-          value: "13",
-          label: "Sarawak"
-        },
-        {
-          value: "14",
-          label: "Selangor"
-        },
-        {
-          value: "15",
-          label: "Terengganu"
-        }
+        {value: "1",label: "Johor"},
+        {value: "2",label: "Kedah"},
+        {value: "3",label: "Kelantan"},
+        {value: "4",label: "Kuala Lumpur"},
+        {value: "5",label: "Labuan"},
+        {value: "8",label: "Melaka"},
+        {value: "6",label: "Negeri Sembilan"},
+        {value: "7",label: "Pahang"},
+        {value: "9",label: "Perak"},
+        {value: "101",label: "Perlis"},
+        {value: "102",label: "Pulau Pinang"},
+        {value: "103",label: "Sabah"},
+        {value: "104",label: "Sarawak"},
+        {value: "105",label: "Selangor"},
+        {value: "10",label: "Terengganu"},
+
       ]
     };
   }
