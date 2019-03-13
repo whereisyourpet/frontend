@@ -231,11 +231,11 @@
             <el-input v-model="data.description" type="textarea" rows="3"></el-input>
           </el-form-item>
 
-          <el-row>
+          <div>
             <el-col :span="6" :offset="9">
               <el-button type="primary" id="submit_button" @click="handle_evaluate()">提交</el-button>
             </el-col>
-          </el-row>
+          </div>
         </el-form>
       </el-card>
     </el-container>
@@ -1117,6 +1117,7 @@ export default {
 
 #submit_button {
   width: 100%;
+  margin-bottom: 20px;
 }
 
 #description_input {
