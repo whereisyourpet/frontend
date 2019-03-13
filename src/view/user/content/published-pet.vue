@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="" v-for="(pet,key) in pets_list" :key="key">
+  <div class="published-pet-list">
+    <div class="published-pet-card" v-for="(pet,key) in pets_list" :key="key">
       <div @click="$router.push('/Pet/'+pet.id)">
         <el-card class="published-pet-card">
           <el-container>

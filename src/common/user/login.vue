@@ -84,6 +84,16 @@ export default {
             }
           });
 
+          me.$alert("您已经登录，为您跳转到主页", "提示", {
+            confirmButtonText: "确定",
+            callback: action => {
+              me.$message({
+                message: "跳转成功",
+                type: "success"
+              });
+            }
+          });
+
           me.$router.push("/");
         }
       });
