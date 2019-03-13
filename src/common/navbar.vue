@@ -12,25 +12,21 @@
         v-if="!this.isLogged"
         index="register"
         @click="$router.push('/register')"
-        style="float: right"
-      >注册</el-menu-item>
+        style="float: right">注册</el-menu-item>
       <el-menu-item
         v-if="!this.isLogged"
         index="log"
         @click="$router.push('/login')"
-        style="float: right"
-      >登录</el-menu-item>
+        style="float: right">登录</el-menu-item>
       <el-menu-item
         v-if="this.isLogged"
         index="logout"
         @click="handle_logout()"
-        style="float: right"
-      >登出</el-menu-item>
+        style="float: right">登出</el-menu-item>
       <el-menu-item
         v-if="this.isLogged"
         @click="$router.push('/basic')"
-        style="float: right"
-      >欢迎您，{{this.nickname}}</el-menu-item>
+        style="float: right">欢迎您，{{this.nickname}}</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -43,6 +39,8 @@ import { mapState } from "vuex";
 ################################################################################
   */
 //import { logout } from ''
+
+// import { mapState } from 'vuex'
 
 export default {
   name: "navbar",
@@ -82,7 +80,7 @@ export default {
                   });
                 }
               });
-                
+
                 me.$router.push("basic");
               }
             });
@@ -107,36 +105,11 @@ export default {
           }
         });
     }
-  }
-
-  /*
-################################################################################
-#                                 wait for api                                 #
-################################################################################
-  */
-
-  // methods : {
-  //   handle_logout() {
-  //     this.$store.commit('TOGGLE_LOGOUT') // set log out
-  //     this.$store.commit('SET_USERINFO', {}) // clear user information
-  //     // use put method to log out
-  //     logout()
-  //       .then(res => {
-  //         this.$message({
-  //           message: '注销成功',
-  //           type: 'success',
-  //           showClose: true
-  //         })
-  //         this.$router.push('/')
-  //         console.log(this.$store.state.userInfo);
-  //       }).catch(e => {
-  //       console.log("error! Login.vue", e.response.data);
-  //     })
-  //   }
-  // }
-  // computed : {
+  },
+  // computed: {
   //   ...mapState(['isLogged'])
   // }
+
 };
 </script>
 

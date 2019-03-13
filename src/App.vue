@@ -42,7 +42,6 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 100%;
 }
 
 .el-main {
