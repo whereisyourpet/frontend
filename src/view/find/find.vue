@@ -223,10 +223,10 @@ export default {
             console.log(response.data.data);
             me.pets_list=response.data.data;
             me.Global.set_find_data(response.data.data);
-            console.log("保护");
-            
-            console.log(me.Global.find_data);
-            console.log("保护");
+            // console.log("保护");
+
+            // console.log(me.Global.find_data);
+            // console.log("保护");
             me.$router.push("/find_pet");
             // location.reload();
           } else {

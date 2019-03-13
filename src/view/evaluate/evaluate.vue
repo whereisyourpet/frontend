@@ -285,6 +285,7 @@ export default {
           console.log(response.statusText);
           console.log(response.headers);
           console.log(response.config);
+          me.submit_publish()
           if (response.data.success) {
             console.log(response);
             console.log(response.data.predict_adoption_star)
@@ -292,9 +293,23 @@ export default {
             me.Global.set_adoption(response.data.predict_adoption_star)
             me.Global.set_popularity(response.data.predict_popularity_star)
             console.log(me.Global.predict_adoption_star);
-            
+
             me.$router.push('/evaluate_pet')
             location.reload();
+          } else {
+            alert(response.data.msg);
+          }
+        });
+    },
+
+    submit_publish(){
+      let me = this;
+      this.$axios.defaults.withCredentials = true;
+      this.$axios
+        .post("http://127.0.0.1:8000/pets/publish_pet_information")
+        .then(function(response) {
+
+          if (response.data.success) {
           } else {
             alert(response.data.msg);
           }

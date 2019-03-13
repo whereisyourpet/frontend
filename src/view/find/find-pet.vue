@@ -4,33 +4,26 @@
       <el-card class="form-style">
           <h2 style="text-align: center">为你推荐</h2>
   <div class="published-pet-list">
-    <div class="published-pet-card" v-for="pet in this.Global.find_data" :key="pet.pet_id">
-      <div @click="$router.push('/Pet/'+pet.id)">
+    <div class="published-pet-card" v-for="pet in this.pets_list" :key="pet.pet_id">
+      <div @click="">
         <el-card class="published-pet-card" style="float: left;width: 45%; margin-top:15px;margin-left:3%;border-radius: 15px;" >
           <el-container>
             <el-main class="published-pet-info-right" >
               <div>
                 <div class="published-pet-title word-style" style="font-size: x-large; ">
                   <a
-                    @click="$router.push('/Pet/'+pet.id)"
+                    @click=""
                     style="text-decoration: none"
-                  >宠物名称:{{pet.pet_name}}</a>
+                  >宠物名称:{{pet[0].pet_name}}</a>
                 </div>
                 <br>
-
                 <div class style="font-size: large; ">
                   <a
-                    @click="$router.push('/Pet/'+pet.id)"
-                    style="text-decoration: none"
-                  >性别：{{pet.gender}}</a>&nbsp;&nbsp;&nbsp;
+                    @click=""
+                    style="text-decoration: none">受欢迎程度：{{pet[0].popularity_star}}</a>&nbsp;&nbsp;&nbsp;
                    <a
-                    @click="$router.push('/Pet/'+pet.id)"
-                    style="text-decoration: none"
-                  >年龄：{{pet.pet_age}}</a>&nbsp;&nbsp;&nbsp;
-                   <a
-                    @click="$router.push('/Pet/'+pet.id)"
-                    style="text-decoration: none"
-                  >救助人：{{pet.rescuer_name}}</a>&nbsp;&nbsp;&nbsp;
+                    @click=""
+                    style="text-decoration: none">被收养速率：{{pet[0].adoption_star}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
               </div>
             </el-main>
@@ -56,7 +49,10 @@ export default {
   },
   mounted() {
     let me = this;
-    console.log(me.Global.find_data)
+    me.pets_list = me.Global.find_data
+    // console.log(me.Global.find_data)
+    console.log(11)
+    console.log(me.pets_list)
     console.log(11)
   },
   //  接口没定我写个捷豹写,

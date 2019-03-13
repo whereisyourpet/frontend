@@ -4,17 +4,17 @@
       <el-col :span="7" :offset="15">
         <el-card class="img-block">
           <el-row>
-            <a href="index.vue">
+            <a href="/#/menu">
               <img class="img-button" src="../../assets/image_repo/doge_meitu_1_s.png">
             </a>
           </el-row>
           <el-row>
-            <a href="index.vue">
+            <a href="/#/evaluate">
               <img class="img-button" src="../../assets/image_repo/doge_meitu_3_s.png">
             </a>
           </el-row>
           <el-row>
-            <a href="index.vue">
+            <a href="/#/find">
               <img class="img-button" src="../../assets/image_repo/doge_meitu_2_s.png">
             </a>
           </el-row>
@@ -22,7 +22,7 @@
       </el-col>
     </el-row>
   </el-container>
-</template>   
+</template>
 
 <script>
 export default {

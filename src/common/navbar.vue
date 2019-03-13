@@ -8,6 +8,7 @@
       <el-menu-item index="activity" @click="$router.push('/menu')">数据分析</el-menu-item>
       <el-menu-item index="resource" @click="$router.push('/evaluate')">萌宠寻主</el-menu-item>
       <el-menu-item index="forum" @click="$router.push('/find')">猜你喜欢</el-menu-item>
+      <el-menu-item index="selectPet" @click="$router.push('/selectPet')">匹配萌宠</el-menu-item>
       <el-menu-item
         v-if="!this.isLogged"
         index="register"
