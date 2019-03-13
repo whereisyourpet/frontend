@@ -7,7 +7,8 @@ import Vuex from 'vuex'
 import store from "./store/index";
 import echarts from 'echarts'
 
-import amcharts from 'amcharts3'
+import AmCharts from 'amcharts3'
+import AmSerial from 'amcharts3/amcharts/serial'
 
 import qs from 'qs'
 
