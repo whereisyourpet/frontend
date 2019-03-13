@@ -8,7 +8,7 @@ export default {
   data() {
     return {
       msg: "Dewormed_adoption_speed",
-          x:'center',
+        x:'center',
         y:'top',
         textAlign:'left'
     };

@@ -140,8 +140,9 @@ var data = [[2	,0	,2.749714],
 
       myChart.setOption({
         title: {
-                    text: '被收养速度与性别及种类的关系'
-                },
+                    text: '被收养速度与性别及种类的关系',
+                    x:'center',
+                        },
     tooltip: {},
     visualMap: {
         show:false,
@@ -151,20 +152,53 @@ var data = [[2	,0	,2.749714],
         }
     },
     xAxis3D: {
-        name:'type',
+        name:'种类',
+          nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "18"
+        },
         nameGap: 1,
         type: 'category',
-        data: xData
+        data: xData,
+        axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "18"
+            }
+          }
     },
     yAxis3D: {
-        name:'gender',
+        name:'性别',
+        nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "18"
+        },
         type: 'category',
-        data: yData
+        data: yData,
+        axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "18"
+            }
+          }
     },
     zAxis3D: {
-        name:'like',
+        name:'受欢迎程度',
+        nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "18"
+        },
         type: 'value',
-        min:2
+        min:2,
+        axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "18"
+            }
+          }
     },
         grid3D: {
           boxWidth: 70,

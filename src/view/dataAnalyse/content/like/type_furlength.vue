@@ -141,7 +141,8 @@ export default {
 
       myChart.setOption({
         title: {
-          text: "受欢迎程度与毛长及种类的关系"
+          text: "受欢迎程度与毛长及种类的关系",
+          x:'center',
         },
         tooltip: {},
         visualMap: {
@@ -152,20 +153,53 @@ export default {
           }
         },
         xAxis3D: {
-          name: "type",
+          name: "种类",
+          nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "18"
+        },
           nameGap: 1,
           type: "category",
-          data: ["狗", "猫"]
+          data: ["狗", "猫"],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "18"
+            }
+          }
         },
         yAxis3D: {
-          name: "gender",
+          name: "性别",
+          nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "18"
+        },
           type: "category",
-          data: ["短", "中", "长"]
+          data: ["短", "中", "长"],
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "18"
+            }
+          }
         },
         zAxis3D: {
-          name: "like",
+          name: "受欢迎程度",
+          nameTextStyle:{
+            fontWeight:'bold',
+              fontSize: "18"
+        },
           type: "value",
-          min: 0.5
+          min: 0.5,
+          axisLabel: {
+            show: true,
+            textStyle: {
+              fontWeight:'bold',
+              fontSize: "18"
+            }
+          }
         },
         grid3D: {
           boxWidth: 70,
