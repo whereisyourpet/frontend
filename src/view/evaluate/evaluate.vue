@@ -1123,4 +1123,8 @@ export default {
 #description_input {
   width: 95%;
 }
+
+.el-input {
+  max-width: 197px;
+}
 </style>
