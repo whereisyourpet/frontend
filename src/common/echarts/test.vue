@@ -1,23 +1,49 @@
 <template>
- <div id="map" style="width: 100%; height: 722px;"></div>
+  <div id="app">
+       <div id="chartdiv" style="width: 100%; height: 400px;"></div>
+</div>
 </template>
+<style scoped>
+ 
+ </style>
+ 
 
 
+ <script>
+ import "../../../build/ammap.js";
+  import "../../../build/malaysiaLow.js";
 
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/malaysiaLow.js"></script>
-<script>
-import AmCharts from "amcharts3"
 export default {
-  
-  name: "hello",
+  name: 'app',
   data() {
     return {
-      msg: "location_adoption_speed"
-    };
+      msg: 'Welcome to Your Vue.js + amCharts App'
+    }
   },
-  mounted() {
-    AmCharts.makeChart("map",{
+  created () {
+    AmCharts.makeChart("chartdiv",
+      // {
+      //   "type": "serial",
+      //   "categoryField": "type",
+      //   "chartCursor": {},
+      //   "graphs": [
+      //     {
+      //       "type": "column",
+      //       "title": "Pizza types",
+      //       "valueField": "sold",
+      //       "fillAlphas": 0.8
+      //     }
+      //   ],
+
+      //   "dataProvider": [
+      //     { "type": "Margherita", "sold": 120 },
+      //     { "type": "Funghi", "sold": 82 },
+      //     { "type": "Capricciosa", "sold": 78 },
+      //     { "type": "Quattro Stagioni", "sold": 71 }
+      //   ]
+      // }
+
+      {
 					"type": "map",
 					"pathToImages": "http://www.amcharts.com/lib/3/images/",
 					"addClassNames": true,
@@ -159,7 +185,8 @@ export default {
 						"draggerAlpha": 1,
 						"buttonCornerRadius": 2
 					}
-				});
+				}
+    );
   }
-};
+}
 </script>

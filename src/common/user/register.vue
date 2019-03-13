@@ -1,18 +1,17 @@
 <template>
   <div class="register background">
     <div class="centerPage">
-      <div style="height:30px"></div>
       <el-card class="card_style">
-        <div slot="header" class="clearfix">
+        <div slot="header" class="card-header">
           <h2>
             注册
             <i class="el-icon-caret-left"></i>
             <router-link to="/login">
-              <el-button type="text" style="float: right; padding: 3px 0">登录</el-button>
+              <el-button type="text" style="float: right;">登录</el-button>
             </router-link>
           </h2>
         </div>
-        <el-form :model="form" :rules="rules" ref="form" label-width="100px">
+        <el-form :model="form" :rules="rules" ref="form" label-width="80px" label-position="left">
           <el-form-item prop="username" label="用户名">
             <el-input v-model.trim="form.username" type="text"></el-input>
           </el-form-item>
@@ -26,12 +25,13 @@
             <el-input v-model="form.password2" type="password"></el-input>
           </el-form-item>
           <!--注册按钮要不要居中？-->
-          <el-form-item label-width="143px">
-            <el-button type="primary" @click="handle_register()">注册</el-button>
+        </el-form>
+        <el-form>
+          <el-form-item>
+            <el-button type="primary" id="submit_button" @click="handle_register()">注册</el-button>
           </el-form-item>
         </el-form>
       </el-card>
-      <div style="height:30px"></div>
     </div>
   </div>
 </template>
@@ -101,7 +101,7 @@ export default {
       if (this.form.username.length == 0) {
         this.$notify.info({
           title: "提示",
-          message: "请输入用户名",
+          message: "请输入用户名"
         });
         return;
       }
@@ -109,7 +109,7 @@ export default {
       if (this.form.nickname.length == 0) {
         this.$notify.info({
           title: "提示",
-          message: "请输入昵称",
+          message: "请输入昵称"
         });
         return;
       }
@@ -117,14 +117,14 @@ export default {
       if (this.form.password.length < 6) {
         this.$notify.info({
           title: "提示",
-          message: "密码长度应在6-18位",
+          message: "密码长度应在6-18位"
         });
         return;
       }
       if (this.form.password !== this.form.password2) {
         this.$notify.info({
           title: "提示",
-          message: "两次密码不一致",
+          message: "两次密码不一致"
         });
         return;
       }
@@ -145,13 +145,13 @@ export default {
           // console.log(response.config);
           if (response.data.success) {
             me.$message({
-          message: "注册成功，请登录",
-          type: 'success',
-          center: true
-        })
+              message: "注册成功，请登录",
+              type: "success",
+              center: true
+            });
             me.$router.push("/login");
           } else {
-            me.form.username=""
+            me.form.username = "";
             me.$notify.error({
               title: "错误",
               message: response.data.msg
@@ -166,19 +166,29 @@ export default {
 <style scoped>
 .background {
   background-image: url("../../assets/image_repo/background-lip.jpeg");
-  position: absolute;
+  position: fixed;
   top: 60px;
   bottom: 0px;
   left: 0px;
+  right: 0px;
+}
+
+.card-header {
+  margin: -20px 0;
 }
 
 .centerPage {
   margin-left: 65%;
 }
 .card_style {
+  margin-top: 35%;
   width: 85%;
   border-radius: 5%;
-  height: 30%;
   background: rgba(255, 255, 255, 0.7);
+}
+
+#submit_button {
+  width: 100%;
+  display: block;
 }
 </style>

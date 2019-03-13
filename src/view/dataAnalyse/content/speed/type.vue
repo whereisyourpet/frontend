@@ -53,6 +53,7 @@ export default {
           {
             name: "被收养速度",
             type: "bar",
+            barWidth: 130,
             data: [2.615101, 2.399504]
             // data: [0.615101, 0.399504]
             // 数据归一化

@@ -1,45 +1,25 @@
-<template>
-<div id="location">
-       <div id="chartdiv" style="width: 600px; height: 450px;"></div>
-</div>
-</template>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>map created with amCharts | amCharts</title>
+		<meta name="description" content="map created using amCharts pixel map generator" />
 
-<script>
- import "../../../../../build/ammap.js";
-  import "../../../../../build/malaysiaLow.js";
+		<!--
+			This map was created using Pixel Map Generator by amCharts and is licensed under the Creative Commons Attribution 4.0 International License.
+			You may use this map the way you see fit as long as proper attribution to the name of amCharts is given in the form of link to https://pixelmap.amcharts.com/
+			To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
 
-export default {
-  name: 'location',
-  data() {
-    return {
-      msg: ''
-    }
-  },
-   mounted() {
-    console.log(this);
-    AmCharts.makeChart("chartdiv",
-      // {
-      //   "type": "serial",
-      //   "categoryField": "type",
-      //   "chartCursor": {},
-      //   "graphs": [
-      //     {
-      //       "type": "column",
-      //       "title": "Pizza types",
-      //       "valueField": "sold",
-      //       "fillAlphas": 0.8
-      //     }
-      //   ],
+			If you would like to use this map without any attribution, you can acquire a commercial license for the JavaScript Maps - a tool that was used to produce this map.
+			To do so, visit amCharts Online Store: https://www.amcharts.com/online-store/
+		-->
 
-      //   "dataProvider": [
-      //     { "type": "Margherita", "sold": 120 },
-      //     { "type": "Funghi", "sold": 82 },
-      //     { "type": "Capricciosa", "sold": 78 },
-      //     { "type": "Quattro Stagioni", "sold": 71 }
-      //   ]
-      // }
+		<!-- amCharts javascript sources -->
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/malaysiaLow.js"></script>
 
-      {
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("map",{
 					"type": "map",
 					"pathToImages": "http://www.amcharts.com/lib/3/images/",
 					"addClassNames": true,
@@ -181,8 +161,10 @@ export default {
 						"draggerAlpha": 1,
 						"buttonCornerRadius": 2
 					}
-				}
-    );
-  }
-}
-</script>
+				});
+		</script>
+	</head>
+	<body style="margin: 0;background-color: rgba(80,80,80,1);">
+		<div id="map" style="width: 100%; height: 722px;"></div>
+	</body>
+</html>

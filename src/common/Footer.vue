@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .footer-content {
-  margin: 0 auto;
+  margin: 0 0;
 }
 h2 {
   letter-spacing: 15px;

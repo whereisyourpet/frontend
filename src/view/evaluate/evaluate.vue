@@ -1110,6 +1110,7 @@ export default {
   margin-bottom: 70px;
   background: rgba(255, 255, 255, 0.9);
 }
+
 .el-form-item {
   float: left;
   width: 49%;

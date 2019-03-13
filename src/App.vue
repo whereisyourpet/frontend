@@ -42,15 +42,11 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 100%;
-}
-
-.el-main {
-  padding: 0;
 }
 
 .el-header,
-.el-footer {
+.el-footer,
+.el-main {
   padding: 0%;
 }
 
