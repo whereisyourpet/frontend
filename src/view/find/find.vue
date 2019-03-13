@@ -1035,7 +1035,7 @@ export default {
 
 <style scoped>
 .background {
-  background-image: url("../../assets/image_repo/background-white-lie.jpeg");
+  background-image: url("../../assets/image_repo/background-finger.jpeg");
 }
 
 .form-style {
