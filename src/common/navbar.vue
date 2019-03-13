@@ -73,7 +73,16 @@ export default {
               me.nickname = response.data.nickname;
               console.log(response.data.location);
               if (response.data.location == "") {
-                alert("请完善个人信息");
+                me.$alert('请先完善个人信息', '欢迎使用', {
+                confirmButtonText: '确定',
+                callback: action => {
+                  me.$message({
+                    type: '提示',
+                    message: "已为您跳转到修改界面"
+                  });
+                }
+              });
+                
                 me.$router.push("basic");
               }
             });
@@ -87,10 +96,14 @@ export default {
       this.$axios
         .get("http://127.0.0.1:8000/users/logout")
         .then(function(response) {
-          if (response.data.success) {
-            alert("注销成功");
+
             me.$router.push("/");
             location.reload();
+                      if (response.data.success) {
+                    me.$message({
+          message: '注销成功',
+          type: 'success'
+        });
           }
         });
     }
