@@ -191,7 +191,7 @@ export default {
           data: ["狗", "猫"]
         },
         yAxis3D: {
-          name: "性别",
+          name: "毛长",
           type: "category",
           data: ["短", "中", "长"]
         },
