@@ -53,8 +53,8 @@ import Vaccinated from "../content/speed/Vaccinated";
 import Dewormed from "../content/speed/Dewormed";
 import FurLength from "../content/speed/FurLength";
 import location from "../content/speed/location";
-import type_furlength from "../content/like/type_furlength";
-import type_gender from "../content/like/type_gender";
+import type_furlength from "../content/speed/type_furlength";
+import type_gender from "../content/speed/type_gender";
 import { mapState } from "vuex";
 
 export default {
