@@ -7,34 +7,34 @@
       style="margin-top: 50px;"
     >
       <el-menu-item index="type">
-        <el-button type="primary" round>种类</el-button>
+        <el-button type="primary">种类</el-button>
       </el-menu-item>
       <el-menu-item index="gender">
-        <el-button type="primary" round>性别</el-button>
+        <el-button type="primary">性别</el-button>
       </el-menu-item>
       <el-menu-item index="MaturitySize">
-        <el-button type="primary" round>体型</el-button>
+        <el-button type="primary">体型</el-button>
       </el-menu-item>
       <el-menu-item index="FurLength">
-        <el-button type="primary" round>毛长</el-button>
+        <el-button type="primary">毛长</el-button>
       </el-menu-item>
       <el-menu-item index="Dewormed">
-        <el-button type="primary" round>驱虫</el-button>
+        <el-button type="primary">驱虫</el-button>
       </el-menu-item>
       <el-menu-item index="Vaccinated">
-        <el-button type="primary" round>疫苗</el-button>
+        <el-button type="primary">疫苗</el-button>
       </el-menu-item>
       <el-menu-item index="Quantity">
-        <el-button type="primary" round>数量</el-button>
+        <el-button type="primary">数量</el-button>
       </el-menu-item>
       <el-menu-item index="location">
-        <el-button type="primary" round>地域</el-button>
+        <el-button type="primary">地域</el-button>
       </el-menu-item>
       <el-menu-item index="type_gender">
-        <el-button type="primary" round>种类&性别</el-button>
+        <el-button type="primary">种类&性别</el-button>
       </el-menu-item>
       <el-menu-item index="type_furlength">
-        <el-button type="primary" round>种类&毛长</el-button>
+        <el-button type="primary">种类&毛长</el-button>
       </el-menu-item>
     </el-menu>
 
@@ -128,4 +128,8 @@ export default {
 </script>
 
 <style scoped>
+.el-menu-item {
+  float: left;
+  padding: 0 5px;
+}
 </style>
