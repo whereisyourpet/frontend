@@ -229,6 +229,7 @@ export default {
             // console.log("保护");
             me.$router.push("/find_pet");
             // location.reload();
+            console.log('???');
           } else {
             alert(response.data.msg);
           }
