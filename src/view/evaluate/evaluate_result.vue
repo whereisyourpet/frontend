@@ -2,13 +2,13 @@
   <div class="background">
     <el-card class="center-block">
       <!--<h2 v-model="adoption_star">收养指数为{{this.Global.predict_adoption_star}}</h2>-->
-      <h2 v-model="adoption_star">收养指数为{{(adoption_star + 0.2) | numFilter}}</h2>
+      <h2 v-model="adoption_star">收养指数为{{((4-(adoption_star + 0.15)) / 4) * 100  | numFilter}}</h2>
       <hr>
-      <h2 v-model="adoption_star">超越了{{((4-(adoption_star + 0.2)) / 4) * 100}} %的宠物</h2>
+      <h2 v-model="adoption_star">超越了{{((4-(adoption_star + 0.3)) / 4) * 100 | numFilter}} %的宠物</h2>
       <hr>
-      <h2 v-model="popularity_star">受欢迎指数为{{popularity_star}}</h2>
+      <h2 v-model="popularity_star">受欢迎指数为{{((4-(popularity_star + 0.1)) / 4) * 100 | numFilter}}</h2>
       <hr>
-      <h2 v-model="popularity_star">超越了{{((4-popularity_star) / 4) * 100}} %的宠物</h2>
+      <h2 v-model="popularity_star">超越了{{((4-popularity_star - 0.2) / 4) * 100 | numFilter}} %的宠物</h2>
     </el-card>
   </div>
 </template>
