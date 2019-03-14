@@ -1,29 +1,23 @@
 <template>
  <div class="body">
     <el-container class="background">
-      <el-card class="form-style">
+      <el-card class="form-style" style="padding-bottom:20px">
           <h2 style="text-align: center">为你推荐</h2>
-  <div class="published-pet-list">
+  <div class="published-pet-list" >
     <div class="published-pet-card" v-for="pet in this.pets_list" :key="pet.pet_id">
-      <div @click="">
+      <div >
         <el-card class="published-pet-card" style="float: left;width: 45%; margin-top:15px;margin-left:3%;border-radius: 15px;" >
           <el-container>
             <el-main class="published-pet-info-right" >
               <div>
-                <div class="published-pet-title word-style" style="font-size: x-large; ">
-                  <a
-                    @click=""
-                    style="text-decoration: none"
+                <div class="published-pet-title word-style" style="font-size: large; ">
+                  <a style="text-decoration: none"
                   >宠物名称:{{pet[0].pet_name}}</a>
                 </div>
                 <br>
                 <div class style="font-size: large; ">
-                  <a
-                    @click=""
-                    style="text-decoration: none">受欢迎程度：{{pet[0].popularity_star}}</a>&nbsp;&nbsp;&nbsp;
-                   <a
-                    @click=""
-                    style="text-decoration: none">被收养速率：{{pet[0].adoption_star}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a style="text-decoration: none">受欢迎程度：{{pet[0].popularity_star}}</a>&nbsp;&nbsp;&nbsp;
+                   <a style="text-decoration: none">被收养速率：{{pet[0].adoption_star}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
               </div>
             </el-main>
