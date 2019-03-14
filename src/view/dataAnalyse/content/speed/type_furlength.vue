@@ -174,7 +174,7 @@ export default {
 
       myChart.setOption({
         title: {
-          text: "受欢迎程度与毛长及种类的关系"
+          text: "被收养速度与毛长及种类的关系"
         },
         tooltip: {},
         visualMap: {
@@ -185,18 +185,18 @@ export default {
           }
         },
         xAxis3D: {
-          name: "type",
+          name: "种类",
           nameGap: 1,
           type: "category",
           data: ["狗", "猫"]
         },
         yAxis3D: {
-          name: "gender",
+          name: "性别",
           type: "category",
           data: ["短", "中", "长"]
         },
         zAxis3D: {
-          name: "like",
+          name: "被收养速度",
           type: "value",
           min: 0.5
         },
